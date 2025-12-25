@@ -107,7 +107,7 @@ export default function Page() {
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
                 <LightingBoltIcon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">On brand, every time.</h3>
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">On brand, always.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Add brand colors, swap logos, never get stuck with a boring stock photo again.</p>
             </div>
@@ -121,7 +121,7 @@ export default function Page() {
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Presets for comman actions.</h3>
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Custom presets.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Save time on repeatable tasks, or define your own with deep customization.</p>
             </div>
@@ -208,10 +208,10 @@ export default function Page() {
                   />
                 </Screenshot>
               }
-              headline="No keys, no BS"
+              headline="Make one image or hundreds"
               subheadline={
                 <p>
-                  Seriously. No API keys to manage, no credentials to lose, no configs to mess up. Just start.
+                  From big batches to tiny copy edits. Seriously. No API keys to manage, no credentials to lose, no configs to mess up. Just start.
                 </p>
               }
               cta={
@@ -318,7 +318,7 @@ export default function Page() {
           <figure className="flex flex-col items-center gap-10 text-center text-sm/7 text-olive-950 dark:text-white">
             <blockquote className="relative flex flex-col gap-4 *:first:before:inline *:first:before:content-['\201c'] *:last:after:inline *:last:after:content-['\201d']">
               <p>
-                I was skeptical about another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana doing what it does best.
+                I was skeptical about building another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana doing what it does best.
               </p>
             </blockquote>
             <figcaption className="flex flex-col items-center gap-4">
@@ -332,7 +332,7 @@ export default function Page() {
                 />
               </div>
               <div>
-                <p className="font-semibold">Jordan Chen</p>
+                <p className="font-semibold">Clark Wimberly</p>
                 <p className="text-olive-700 dark:text-olive-400">Developer</p>
               </div>
             </figcaption>
@@ -370,7 +370,7 @@ export default function Page() {
           <>
             <Plan
               name="Pay as you go"
-              price="$0.02"
+              price="$0.20"
               period="/request"
               subheadline={<p>No monthly fee. No commitment. Just use it.</p>}
               features={[
@@ -379,6 +379,26 @@ export default function Page() {
                 'No setup required',
                 'Instant start',
                 'Pay only for what you use',
+              ]}
+              cta={
+                <ButtonLink href="#" size="lg">
+                  Start now
+                </ButtonLink>
+              }
+              badge="$5 to start"
+            />
+            <Plan
+              name="Bring your own key"
+              price="$0.15"
+              period="/request"
+              subheadline={<p>Use your own API key and save on every request.</p>}
+              features={[
+                'Full Nano Banana Pro access',
+                'No API keys needed',
+                'No setup required',
+                'Instant start',
+                'Pay only for what you use',
+                'Zero markup tokens',
               ]}
               cta={
                 <ButtonLink href="#" size="lg">
