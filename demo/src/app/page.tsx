@@ -388,7 +388,7 @@ export default function Page() {
               badge="$5 to start"
             />
             <Plan
-              name="Bring your own key"
+              name="Pay as you go PRO"
               price="$0.15"
               period="/request"
               subheadline={<p>Use your own API key and save on every request.</p>}
@@ -405,7 +405,7 @@ export default function Page() {
                   Start now
                 </ButtonLink>
               }
-              badge="$5 to start"
+              badge="$10 to start"
             />
           </>
         }
