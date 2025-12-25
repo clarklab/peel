@@ -1,5 +1,6 @@
 import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
 import { Main } from '@/components/elements/main'
+import { BananaIcon } from '@/components/icons/banana-icon'
 import { GitHubIcon } from '@/components/icons/social/github-icon'
 import { XIcon } from '@/components/icons/social/x-icon'
 import { YouTubeIcon } from '@/components/icons/social/youtube-icon'
@@ -34,7 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
           rel="stylesheet"
@@ -56,8 +57,10 @@ export default function RootLayout({
             }
             logo={
               <NavbarLogo href="/">
-                <div className="text-2xl font-bold dark:hidden">Peel</div>
-                <div className="text-2xl font-bold not-dark:hidden">Peel</div>
+                <div className="flex items-center gap-2">
+                  <BananaIcon className="h-8 w-8 text-olive-950 dark:text-white" />
+                  <span className="text-2xl font-bold text-olive-950 dark:text-white">Peel</span>
+                </div>
               </NavbarLogo>
             }
             actions={
@@ -79,7 +82,6 @@ export default function RootLayout({
                     Get updates when we ship new features. No spam, no fluff. Just the good stuff.
                   </p>
                 }
-                action="#"
               />
             }
             links={
