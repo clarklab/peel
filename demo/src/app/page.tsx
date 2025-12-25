@@ -1,10 +1,11 @@
-import { AnnouncementBadge } from '@/components/elements/announcement-badge'
 import { ButtonLink, PlainButtonLink, SoftButtonLink } from '@/components/elements/button'
 import { Link } from '@/components/elements/link'
-import { Logo, LogoGrid } from '@/components/elements/logo-grid'
 import { Screenshot } from '@/components/elements/screenshot'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
+import { LightingBoltIcon } from '@/components/icons/lighting-bolt-icon'
+import { RocketIcon } from '@/components/icons/rocket-icon'
+import { SparklesIcon } from '@/components/icons/sparkles-icon'
 import { CallToActionSimple } from '@/components/sections/call-to-action-simple'
 import { FAQsTwoColumnAccordion, Faq } from '@/components/sections/faqs-two-column-accordion'
 import { Feature, FeaturesTwoColumnWithDemos } from '@/components/sections/features-two-column-with-demos'
@@ -20,7 +21,6 @@ export default function Page() {
       {/* Hero */}
       <HeroLeftAlignedWithDemo
         id="hero"
-        eyebrow={<AnnouncementBadge href="#" text="Now live: Nano Banana just got stupid easy" cta="Try it" />}
         headline="Nano Banana. Zero friction."
         subheadline={
           <p>
@@ -89,104 +89,29 @@ export default function Page() {
           </>
         }
         footer={
-          <LogoGrid>
-            <Logo>
-              <Image
-                src="/img/logos/9-color-black-height-32.svg"
-                className="dark:hidden"
-                alt=""
-                width={51}
-                height={32}
-              />
-              <Image
-                src="/img/logos/9-color-white-height-32.svg"
-                className="bg-black/75 not-dark:hidden"
-                alt=""
-                width={51}
-                height={32}
-              />
-            </Logo>
-            <Logo>
-              <Image
-                src="/img/logos/10-color-black-height-32.svg"
-                className="dark:hidden"
-                alt=""
-                width={70}
-                height={32}
-              />
-              <Image
-                src="/img/logos/10-color-white-height-32.svg"
-                className="bg-black/75 not-dark:hidden"
-                alt=""
-                width={70}
-                height={32}
-              />
-            </Logo>
-            <Logo>
-              <Image
-                src="/img/logos/11-color-black-height-32.svg"
-                className="dark:hidden"
-                alt=""
-                width={100}
-                height={32}
-              />
-              <Image
-                src="/img/logos/11-color-white-height-32.svg"
-                className="bg-black/75 not-dark:hidden"
-                alt=""
-                width={100}
-                height={32}
-              />
-            </Logo>
-            <Logo>
-              <Image
-                src="/img/logos/12-color-black-height-32.svg"
-                className="dark:hidden"
-                alt=""
-                width={85}
-                height={32}
-              />
-              <Image
-                src="/img/logos/12-color-white-height-32.svg"
-                className="bg-black/75 not-dark:hidden"
-                alt=""
-                width={85}
-                height={32}
-              />
-            </Logo>
-            <Logo>
-              <Image
-                src="/img/logos/13-color-black-height-32.svg"
-                className="dark:hidden"
-                alt=""
-                width={75}
-                height={32}
-              />
-              <Image
-                src="/img/logos/13-color-white-height-32.svg"
-                className="bg-black/75 not-dark:hidden"
-                alt=""
-                width={75}
-                height={32}
-              />
-            </Logo>
-            <Logo>
-              <Image
-                src="/img/logos/8-color-black-height-32.svg"
-                className="dark:hidden"
-                alt=""
-                width={85}
-                height={32}
-              />
-              <Image
-                src="/img/logos/8-color-white-height-32.svg"
-                className="bg-black/75 not-dark:hidden"
-                alt=""
-                width={85}
-                height={32}
-              />
-            </Logo>
-          </LogoGrid>
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
+            <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-olive-950/5 dark:bg-white/10">
+                <RocketIcon className="h-6 w-6 text-olive-950 dark:text-white" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-semibold text-olive-950 dark:text-white">Lightning Fast</h3>
+              <p className="mt-2 text-sm text-olive-700 dark:text-olive-400">Get results in seconds, not minutes. Optimized for speed.</p>
+            </div>
+            <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-olive-950/5 dark:bg-white/10">
+                <SparklesIcon className="h-6 w-6 text-olive-950 dark:text-white" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-semibold text-olive-950 dark:text-white">Dead Simple</h3>
+              <p className="mt-2 text-sm text-olive-700 dark:text-olive-400">No configuration, no API keys. Just start using it.</p>
+            </div>
+            <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-olive-950/5 dark:bg-white/10">
+                <LightingBoltIcon className="h-6 w-6 text-olive-950 dark:text-white" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-semibold text-olive-950 dark:text-white">Pay As You Go</h3>
+              <p className="mt-2 text-sm text-olive-700 dark:text-olive-400">No subscriptions. Only pay for what you actually use.</p>
+            </div>
+          </div>
         }
       />
       {/* Features */}

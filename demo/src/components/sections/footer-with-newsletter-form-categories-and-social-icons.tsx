@@ -53,14 +53,23 @@ export function NewsletterForm({
   subheadline: ReactNode
 } & ComponentProps<'form'>) {
   return (
-    <form className={clsx('flex max-w-sm flex-col gap-2', className)} {...props}>
+    <form
+      className={clsx('flex max-w-sm flex-col gap-2', className)}
+      name="newsletter"
+      method="POST"
+      data-netlify="true"
+      {...props}
+    >
+      <input type="hidden" name="form-name" value="newsletter" />
       <p>{headline}</p>
       <div className="flex flex-col gap-4 text-olive-700 dark:text-olive-400">{subheadline}</div>
       <div className="flex items-center border-b border-olive-950/20 py-2 has-[input:focus]:border-olive-950 dark:border-white/20 dark:has-[input:focus]:border-white">
         <input
           type="email"
+          name="email"
           placeholder="Email"
           aria-label="Email"
+          required
           className="flex-1 text-olive-950 focus:outline-hidden dark:text-white"
         />
         <button
