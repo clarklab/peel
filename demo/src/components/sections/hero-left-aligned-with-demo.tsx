@@ -27,7 +27,7 @@ export function HeroLeftAlignedWithDemo({
         <div className="flex flex-col gap-32">
           <div className="flex flex-col items-start gap-6">
             {eyebrow}
-            <Heading className="max-w-5xl">{headline}</Heading>
+            <Heading className="max-w-7xl">{headline}</Heading>
             <Text size="lg" className="flex max-w-3xl flex-col gap-4">
               {subheadline}
             </Text>
