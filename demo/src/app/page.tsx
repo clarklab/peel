@@ -1,6 +1,12 @@
 import { ButtonLink, PlainButtonLink, SoftButtonLink } from '@/components/elements/button'
 import { Link } from '@/components/elements/link'
 import { Screenshot } from '@/components/elements/screenshot'
+import { Abstract1Icon } from '@/components/icons/abstract-1-icon'
+import { Abstract2Icon } from '@/components/icons/abstract-2-icon'
+import { Abstract3Icon } from '@/components/icons/abstract-3-icon'
+import { Abstract4Icon } from '@/components/icons/abstract-4-icon'
+import { Abstract5Icon } from '@/components/icons/abstract-5-icon'
+import { Abstract6Icon } from '@/components/icons/abstract-6-icon'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
 import { LightingBoltIcon } from '@/components/icons/lighting-bolt-icon'
@@ -92,42 +98,42 @@ export default function Page() {
           <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3">
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <RocketIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <Abstract1Icon className="h-5 w-5 text-olive-950 dark:text-white" />
                 <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Zero setup.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">From photo or text prompt, open Peel and start making images in seconds.</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <SparklesIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <Abstract2Icon className="h-5 w-5 text-olive-950 dark:text-white" />
                 <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">No API keys.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">You don't need to be a wizard to make and edit images. Or do be a wizard, we don't care.</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <LightingBoltIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <Abstract3Icon className="h-5 w-5 text-olive-950 dark:text-white" />
                 <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">On brand, always.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Add brand colors, swap logos, never get stuck with a boring stock photo again.</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <RocketIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <Abstract4Icon className="h-5 w-5 text-olive-950 dark:text-white" />
                 <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Big batch energy.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Edit one image or a dozen at a time, just don't tell your boss (or do, they'll love it).</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <SparklesIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <Abstract5Icon className="h-5 w-5 text-olive-950 dark:text-white" />
                 <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Custom presets.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Save time on repeatable tasks, or define your own with deep customization.</p>
             </div>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <LightingBoltIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <Abstract6Icon className="h-5 w-5 text-olive-950 dark:text-white" />
                 <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Intern ready.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Easy enough an intern can do it, powerful enough to replace a team of human editors.</p>
@@ -306,7 +312,7 @@ export default function Page() {
         }
       >
         <Stat stat="15s" text="Average response time. Nano Banana is fast. Peel just made it better." />
-        <Stat stat="0" text="Setup steps. Literally zero. We counted." />
+        <Stat stat="Zero" text="AI or API setup steps. Literally zero. We counted." />
       </StatsWithGraph>
       {/* Testimonial */}
       <TestimonialThreeColumnGrid
@@ -391,7 +397,7 @@ export default function Page() {
               name="Pay as you go PRO"
               price="$0.15"
               period="/request"
-              subheadline={<p>Use your own API key and save on every request.</p>}
+              subheadline={<p>No monthly fee. No commitment. Just use it.</p>}
               features={[
                 'Full Nano Banana Pro access',
                 'No API keys needed',
