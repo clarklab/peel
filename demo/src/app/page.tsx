@@ -24,7 +24,7 @@ export default function Page() {
         headline="The easiest way to make and edit images with Nano Banana."
         subheadline={
           <p>
-            More than a Nano Banana wrapper. No subscription. Just pay-as-you-go image editing with the best AI model available today.
+            More than a Nano Banana wrapper. No subscription. Just pay-as-you-go image editing with the best AI model available today. As it should be.
           </p>
         }
         cta={
@@ -139,7 +139,7 @@ export default function Page() {
       <FeaturesTwoColumnWithDemos
         id="features"
         eyebrow="Dead simple"
-        headline="Nano Banana, but you actually want to use it."
+        headline="Just like Nano Banana, but you actually want to use it."
         subheadline={
           <p>
             We took the best AI model and made it actually approachable. Faster, cleaner, better.
@@ -365,7 +365,7 @@ export default function Page() {
       {/* Pricing */}
       <PricingMultiTier
         id="pricing"
-        headline="Simple pricing. Pay for what you use."
+        headline="Simple pricing. Pay for what you use. That's it."
         plans={
           <>
             <Plan
@@ -374,7 +374,7 @@ export default function Page() {
               period="/request"
               subheadline={<p>No monthly fee. No commitment. Just use it.</p>}
               features={[
-                'Full Nano Banana access',
+                'Full Nano Banana Pro access',
                 'No API keys needed',
                 'No setup required',
                 'Instant start',
@@ -393,7 +393,7 @@ export default function Page() {
       {/* Call To Action */}
       <CallToActionSimple
         id="call-to-action"
-        headline="Ready to use Nano Banana like a normal person?"
+        headline="So... ready to use Nano Banana like a normal person?"
         subheadline={
           <p>
             No signups. No setup. No subscriptions. Just the best AI tool, zero friction. Start in seconds.
