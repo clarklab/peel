@@ -24,7 +24,7 @@ export default function Page() {
         headline="The easiest way to make and edit images with Nano Banana."
         subheadline={
           <p>
-            More than a banana wrapper. No subscription. Just pay-as-you-go image editing with the best AI model available today.
+            More than a Nano Banana wrapper. No subscription. Just pay-as-you-go image editing with the best AI model available today.
           </p>
         }
         cta={
