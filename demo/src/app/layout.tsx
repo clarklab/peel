@@ -59,7 +59,7 @@ export default function RootLayout({
               <NavbarLogo href="/">
                 <div className="flex items-center gap-2">
                   <BananaIcon className="h-8 w-8 text-olive-950 dark:text-white" />
-                  <span className="text-2xl font-bold text-olive-950 dark:text-white">Peel</span>
+                  <span className="text-2xl font-semibold text-olive-950 dark:text-white">Peel</span>
                 </div>
               </NavbarLogo>
             }
