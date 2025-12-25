@@ -40,7 +40,7 @@ export default function Page() {
         }
         demo={
           <>
-            <Screenshot className="rounded-md lg:hidden" wallpaper="yellow" placement="bottom-right">
+            <Screenshot className="rounded-md lg:hidden" placement="bottom-right">
               <Image
                 src="/img/screenshots/1-left-1670-top-1408.webp"
                 alt=""
@@ -70,7 +70,7 @@ export default function Page() {
                 className="bg-black/75 not-dark:hidden max-md:hidden"
               />
             </Screenshot>
-            <Screenshot className="rounded-lg max-lg:hidden" wallpaper="yellow" placement="bottom">
+            <Screenshot className="rounded-lg max-lg:hidden" placement="bottom">
               <Image
                 src="/img/screenshots/1.webp"
                 alt=""
@@ -149,7 +149,7 @@ export default function Page() {
           <>
             <Feature
               demo={
-                <Screenshot wallpaper="purple" placement="bottom-right">
+                <Screenshot placement="bottom-right">
                   <Image
                     src="/img/screenshots/1-left-1000-top-800.webp"
                     alt=""
@@ -222,7 +222,7 @@ export default function Page() {
             />
             <Feature
               demo={
-                <Screenshot wallpaper="blue" placement="bottom-left">
+                <Screenshot placement="bottom-left">
                   <Image
                     src="/img/screenshots/1-right-1000-top-800.webp"
                     alt=""
