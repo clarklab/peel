@@ -40,7 +40,7 @@ export default function Page() {
         }
         demo={
           <>
-            <Screenshot className="rounded-md lg:hidden" wallpaper="green" placement="bottom-right">
+            <Screenshot className="rounded-md lg:hidden" wallpaper="yellow" placement="bottom-right">
               <Image
                 src="/img/screenshots/1-left-1670-top-1408.webp"
                 alt=""
@@ -70,7 +70,7 @@ export default function Page() {
                 className="bg-black/75 not-dark:hidden max-md:hidden"
               />
             </Screenshot>
-            <Screenshot className="rounded-lg max-lg:hidden" wallpaper="green" placement="bottom">
+            <Screenshot className="rounded-lg max-lg:hidden" wallpaper="yellow" placement="bottom">
               <Image
                 src="/img/screenshots/1.webp"
                 alt=""
