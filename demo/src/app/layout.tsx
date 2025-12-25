@@ -23,6 +23,28 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Peel - Nano Banana, Zero Friction',
   description: 'The easiest way to use Nano Banana. No API keys, no setup, pay as you go with no subscription.',
+  icons: {
+    icon: 'https://peel.diy/favicon.png',
+  },
+  openGraph: {
+    title: 'Peel - Nano Banana, Zero Friction',
+    description: 'The easiest way to use Nano Banana. No API keys, no setup, pay as you go with no subscription.',
+    images: [
+      {
+        url: 'https://peel.diy/unfurl.png',
+        width: 1200,
+        height: 630,
+        alt: 'Peel - Nano Banana, Zero Friction',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Peel - Nano Banana, Zero Friction',
+    description: 'The easiest way to use Nano Banana. No API keys, no setup, pay as you go with no subscription.',
+    images: ['https://peel.diy/unfurl.png'],
+  },
 }
 
 export default function RootLayout({
