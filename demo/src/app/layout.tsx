@@ -20,7 +20,8 @@ import Image from 'next/image'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Oatmeal Kit Demo',
+  title: 'Peel - Nano Banana, Zero Friction',
+  description: 'The easiest way to use Nano Banana. No API keys, no setup, pay as you go with no subscription.',
 }
 
 export default function RootLayout({
@@ -55,28 +56,13 @@ export default function RootLayout({
             }
             logo={
               <NavbarLogo href="/">
-                <Image
-                  src="/img/logos/oatmeal-instrument-color-olive-950.svg"
-                  alt="Oatmeal"
-                  className="dark:hidden"
-                  width={85}
-                  height={28}
-                />
-                <Image
-                  src="/img/logos/oatmeal-instrument-color-white.svg"
-                  alt="Oatmeal"
-                  className="not-dark:hidden"
-                  width={85}
-                  height={28}
-                />
+                <div className="text-2xl font-bold dark:hidden">Peel</div>
+                <div className="text-2xl font-bold not-dark:hidden">Peel</div>
               </NavbarLogo>
             }
             actions={
               <>
-                <PlainButtonLink href="#" className="max-sm:hidden">
-                  Log in
-                </PlainButtonLink>
-                <ButtonLink href="#">Get started</ButtonLink>
+                <ButtonLink href="#">Start now</ButtonLink>
               </>
             }
           />
@@ -87,11 +73,10 @@ export default function RootLayout({
             id="footer"
             cta={
               <NewsletterForm
-                headline="Stay in the loop"
+                headline="Stay updated"
                 subheadline={
                   <p>
-                    Get customer support tips, product updates and customer stories that you can archive as soon as they
-                    arrive.
+                    Get updates when we ship new features. No spam, no fluff. Just the good stuff.
                   </p>
                 }
                 action="#"
@@ -100,30 +85,16 @@ export default function RootLayout({
             links={
               <>
                 <FooterCategory title="Product">
-                  <FooterLink href="#">Features</FooterLink>
-                  <FooterLink href="#">Pricing</FooterLink>
-                  <FooterLink href="#">Integrations</FooterLink>
-                </FooterCategory>
-                <FooterCategory title="Company">
-                  <FooterLink href="#">About</FooterLink>
-                  <FooterLink href="#">Careers</FooterLink>
-                  <FooterLink href="#">Blog</FooterLink>
-                  <FooterLink href="#">Press Kit</FooterLink>
-                </FooterCategory>
-                <FooterCategory title="Resources">
-                  <FooterLink href="#">Help Center</FooterLink>
-                  <FooterLink href="#">API Docs</FooterLink>
-                  <FooterLink href="#">Status</FooterLink>
-                  <FooterLink href="#">Contact</FooterLink>
+                  <FooterLink href="/">Home</FooterLink>
+                  <FooterLink href="/pricing">Pricing</FooterLink>
                 </FooterCategory>
                 <FooterCategory title="Legal">
                   <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
                   <FooterLink href="#">Terms of Service</FooterLink>
-                  <FooterLink href="#">Security</FooterLink>
                 </FooterCategory>
               </>
             }
-            fineprint="© 2025 Oatmeal, Inc."
+            fineprint="© 2025 Peel"
             socialLinks={
               <>
                 <SocialLink href="https://x.com" name="X">
