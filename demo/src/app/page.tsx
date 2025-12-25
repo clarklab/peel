@@ -315,7 +315,7 @@ export default function Page() {
         subheadline={<p>Actual humans using Peel to ship actual things.</p>}
       >
         <div className="col-span-full mx-auto max-w-2xl">
-          <figure className="flex flex-col items-center gap-10 text-center text-sm/7 text-olive-950 dark:text-white">
+          <figure className="flex flex-col items-center gap-10 text-center text-lg text-olive-950 dark:text-white">
             <blockquote className="relative flex flex-col gap-4 *:first:before:inline *:first:before:content-['\201c'] *:last:after:inline *:last:after:content-['\201d']">
               <p>
                 I was skeptical about building another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana doing what it does best.
