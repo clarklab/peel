@@ -21,10 +21,10 @@ export default function Page() {
       {/* Hero */}
       <HeroLeftAlignedWithDemo
         id="hero"
-        headline="Nano Banana. Zero friction."
+        headline="The easiest way to make and edit images with Nano Banana."
         subheadline={
           <p>
-            No API keys. No setup. No subscription. Just pay-as-you-go velocity for the best AI tool you'll use today.
+            Zero setup. No API keys. No subscription. Just pay-as-you-go image editing with the best AI model available today.
           </p>
         }
         cta={
@@ -89,27 +89,48 @@ export default function Page() {
           </>
         }
         footer={
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-olive-950/5 dark:bg-white/10">
-                <RocketIcon className="h-6 w-6 text-olive-950 dark:text-white" />
+          <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3">
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <RocketIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Zero setup.</h3>
               </div>
-              <h3 className="mt-4 font-display text-base font-semibold text-olive-950 dark:text-white">Lightning Fast</h3>
-              <p className="mt-2 text-sm text-olive-700 dark:text-olive-400">Get results in seconds, not minutes. Optimized for speed.</p>
+              <p className="text-sm text-olive-700 dark:text-olive-400">From photo or text prompt, open Peel and start making images in seconds.</p>
             </div>
-            <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-olive-950/5 dark:bg-white/10">
-                <SparklesIcon className="h-6 w-6 text-olive-950 dark:text-white" />
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <SparklesIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">No API keys.</h3>
               </div>
-              <h3 className="mt-4 font-display text-base font-semibold text-olive-950 dark:text-white">Dead Simple</h3>
-              <p className="mt-2 text-sm text-olive-700 dark:text-olive-400">No configuration, no API keys. Just start using it.</p>
+              <p className="text-sm text-olive-700 dark:text-olive-400">You don't need to be a wizard to make and edit images. Or do be a wizard, we don't care.</p>
             </div>
-            <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-olive-950/5 dark:bg-white/10">
-                <LightingBoltIcon className="h-6 w-6 text-olive-950 dark:text-white" />
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <LightingBoltIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">On brand, every time.</h3>
               </div>
-              <h3 className="mt-4 font-display text-base font-semibold text-olive-950 dark:text-white">Pay As You Go</h3>
-              <p className="mt-2 text-sm text-olive-700 dark:text-olive-400">No subscriptions. Only pay for what you actually use.</p>
+              <p className="text-sm text-olive-700 dark:text-olive-400">Add brand colors, swap logos, never get stuck with a boring stock photo again.</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <RocketIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Big batch energy.</h3>
+              </div>
+              <p className="text-sm text-olive-700 dark:text-olive-400">Edit one image or a dozen at a time, just don't tell your boss (or do, they'll love it).</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <SparklesIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Presets for comman actions.</h3>
+              </div>
+              <p className="text-sm text-olive-700 dark:text-olive-400">Save time on repeatable tasks, or define your own with deep customization.</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <LightingBoltIcon className="h-5 w-5 text-olive-950 dark:text-white" />
+                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Intern ready.</h3>
+              </div>
+              <p className="text-sm text-olive-700 dark:text-olive-400">Easy enough an intern can do it, powerful enough to replace a team of human editors.</p>
             </div>
           </div>
         }
@@ -276,15 +297,15 @@ export default function Page() {
       {/* Stats */}
       <StatsWithGraph
         id="stats"
-        eyebrow="Ship faster"
-        headline="The numbers speak for themselves."
+        eyebrow="Work Faster"
+        headline="Our numbers speak for themselves."
         subheadline={
           <p>
-            Peel is already powering thousands of projects. From solo devs to entire teams, we make Nano Banana actually usable.
+            Peel is already powering dozens of projects. From solo devs to entire teams, we make Nano Banana actually usable.
           </p>
         }
       >
-        <Stat stat="<5s" text="Average response time. Nano Banana is fast. We just made it faster." />
+        <Stat stat="15s" text="Average response time. Nano Banana is fast. Peel just made it better." />
         <Stat stat="0" text="Setup steps. Literally zero. We counted." />
       </StatsWithGraph>
       {/* Testimonial */}
@@ -293,114 +314,30 @@ export default function Page() {
         headline="People like it"
         subheadline={<p>Actual humans using Peel to ship actual things.</p>}
       >
-        <Testimonial
-          quote={
-            <p>
-              I was skeptical about another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana doing what it does best.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/10-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Jordan Chen"
-          byline="Developer"
-        />
-        <Testimonial
-          quote={
-            <p>
-              Finally. A tool that doesn't make me read documentation for an hour before I can do anything. Peel is what AI tools should be.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/15-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Alex Martinez"
-          byline="Founder"
-        />
-        <Testimonial
-          quote={
-            <p>
-              The pay-as-you-go model is perfect. I'm not building production apps, I just need Nano Banana sometimes. Peel gets it.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/13-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Sam Riley"
-          byline="Designer & Developer"
-        />
-        <Testimonial
-          quote={
-            <p>
-              I switched from managing API keys across 3 different services to just using Peel. Best decision of the month.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/12-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Taylor Kim"
-          byline="Product Manager"
-        />
-        <Testimonial
-          quote={
-            <p>
-              Zero setup tax. Zero subscription anxiety. Just pure utility. This is how tools should work.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/11-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Morgan Lee"
-          byline="Solo Founder"
-        />
-        <Testimonial
-          quote={
-            <p>
-              Peel makes Nano Banana accessible without the usual enterprise nonsense. It's refreshingly simple.
-            </p>
-          }
-          img={
-            <Image
-              src="/img/avatars/14-size-160.webp"
-              alt=""
-              className="not-dark:bg-white/75 dark:bg-black/75"
-              width={160}
-              height={160}
-            />
-          }
-          name="Casey Park"
-          byline="Startup CTO"
-        />
+        <div className="col-span-full mx-auto max-w-2xl">
+          <figure className="flex flex-col items-center gap-10 text-center text-sm/7 text-olive-950 dark:text-white">
+            <blockquote className="relative flex flex-col gap-4 *:first:before:inline *:first:before:content-['"'] *:last:after:inline *:last:after:content-['"']">
+              <p>
+                I was skeptical about another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana doing what it does best.
+              </p>
+            </blockquote>
+            <figcaption className="flex flex-col items-center gap-4">
+              <div className="flex size-12 overflow-hidden rounded-full outline -outline-offset-1 outline-black/5 *:size-full *:object-cover dark:outline-white/5">
+                <Image
+                  src="/img/avatars/10-size-160.webp"
+                  alt=""
+                  className="not-dark:bg-white/75 dark:bg-black/75"
+                  width={160}
+                  height={160}
+                />
+              </div>
+              <div>
+                <p className="font-semibold">Jordan Chen</p>
+                <p className="text-olive-700 dark:text-olive-400">Developer</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
       </TestimonialThreeColumnGrid>
       {/* FAQs */}
       <FAQsTwoColumnAccordion id="faqs" headline="Questions & Answers">
@@ -448,7 +385,7 @@ export default function Page() {
                   Start now
                 </ButtonLink>
               }
-              badge="Only option"
+              badge="$5 to start"
             />
           </>
         }
