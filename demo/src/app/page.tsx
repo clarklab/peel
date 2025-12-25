@@ -35,7 +35,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <ButtonLink href="https://nano.wims.vc" size="lg">
               Start now
             </ButtonLink>
 
@@ -387,7 +387,7 @@ export default function Page() {
                 'Pay only for what you use',
               ]}
               cta={
-                <ButtonLink href="#" size="lg">
+                <ButtonLink href="https://nano.wims.vc" size="lg">
                   Start now
                 </ButtonLink>
               }
@@ -407,7 +407,7 @@ export default function Page() {
                 'Zero markup tokens',
               ]}
               cta={
-                <ButtonLink href="#" size="lg">
+                <ButtonLink href="https://nano.wims.vc" size="lg">
                   Start now
                 </ButtonLink>
               }
@@ -427,7 +427,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <ButtonLink href="https://nano.wims.vc" size="lg">
               Start now
             </ButtonLink>
 
