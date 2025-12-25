@@ -1,3 +1,5 @@
+'use client'
+
 import { clsx } from 'clsx/lite'
 import Link from 'next/link'
 import type { ComponentProps, ReactNode } from 'react'
@@ -52,12 +54,29 @@ export function NewsletterForm({
   headline: ReactNode
   subheadline: ReactNode
 } & ComponentProps<'form'>) {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+
+    try {
+      await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
+      })
+      // Optionally show success message or reset form
+      event.currentTarget.reset()
+    } catch (error) {
+      // Optionally handle error
+      console.error('Form submission error:', error)
+    }
+  }
+
   return (
     <form
       className={clsx('flex max-w-sm flex-col gap-2', className)}
       name="newsletter"
-      method="POST"
-      data-netlify="true"
+      onSubmit={handleFormSubmit}
       {...props}
     >
       <input type="hidden" name="form-name" value="newsletter" />
