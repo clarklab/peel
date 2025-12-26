@@ -76,7 +76,7 @@ export default function Page() {
                 className="bg-black/75 not-dark:hidden max-md:hidden"
               />
             </Screenshot>
-            <Screenshot className="rounded-lg max-lg:hidden" placement="bottom">
+            <Screenshot className="rounded-3xl max-lg:hidden" placement="bottom">
               <Image
                 src="/img/screenshots/1.webp"
                 alt=""
@@ -287,12 +287,12 @@ export default function Page() {
                   />
                 </Screenshot>
               }
-              headline="Pay for what you use"
+              headline="Defeat repeat tasks"
               subheadline={
-                <p>No monthly fees. No commitment. Use it when you need it, pay for what you actually consume. Revolutionary, we know.</p>
+                <p>Tired of making similar edits? Setup custom presets with custom rules for dang near anything. Never sweat a boring a task again.</p>
               }
               cta={
-                <Link href="#">
+                <Link href="#pricing">
                   See pricing <ArrowNarrowRightIcon />
                 </Link>
               }
@@ -317,13 +317,11 @@ export default function Page() {
       {/* Testimonial */}
       <TestimonialThreeColumnGrid
         id="testimonial"
-        headline="People like it"
-        subheadline={<p>Actual humans using Peel to ship actual things.</p>}
       >
         <div className="col-span-full mx-auto max-w-2xl">
           <figure className="flex flex-col items-center gap-10 text-center text-lg text-olive-950 dark:text-white">
             <blockquote className="relative flex flex-col gap-4 *:first:before:inline *:first:before:content-['\201c'] *:last:after:inline *:last:after:content-['\201d']">
-              <p>
+              <p className="text-3xl md:text-5xl">
                 I was skeptical about building another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana doing what it does best.
               </p>
             </blockquote>
@@ -431,7 +429,7 @@ export default function Page() {
               Start now
             </ButtonLink>
 
-            <PlainButtonLink href="#" size="lg">
+            <PlainButtonLink href="#pricing" size="lg">
               See pricing <ChevronIcon />
             </PlainButtonLink>
           </div>
