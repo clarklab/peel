@@ -30,7 +30,7 @@ export default function Page() {
         headline="The easiest way to make and edit images with Nano Banana."
         subheadline={
           <p>
-            More than a Nano Banana wrapper. No subscription. Just pay-as-you-go image editing with the best AI model available today. As it should be.
+            More than a Nano Banana Pro wrapper. No subscription. Just pay-as-you-go image editing with the best AI model available today. As it should be.
           </p>
         }
         cta={
@@ -145,7 +145,7 @@ export default function Page() {
       <FeaturesTwoColumnWithDemos
         id="features"
         eyebrow="Dead simple"
-        headline="Just like Nano Banana, but you actually want to use it."
+        headline="Just like Nano Banana Pro, but you actually want to use it."
         subheadline={
           <p>
             We took the best AI model and made it actually approachable. Faster, cleaner, better.
@@ -398,18 +398,18 @@ export default function Page() {
               subheadline={<p>No monthly fee. No commitment. Just use it.</p>}
               features={[
                 'Full Nano Banana Pro access',
+                'Zero markup tokens',
                 'No API keys needed',
                 'No setup required',
                 'Instant start',
                 'Pay only for what you use',
-                'Zero markup tokens',
               ]}
               cta={
                 <ButtonLink href="https://nano.wims.vc" size="lg">
                   Start now
                 </ButtonLink>
               }
-              badge="$10 to start"
+              badge="$17 to start"
             />
           </>
         }
