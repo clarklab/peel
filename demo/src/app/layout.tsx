@@ -71,9 +71,8 @@ export default function RootLayout({
             id="navbar"
             links={
               <>
-                <NavbarLink href="/pricing">Pricing</NavbarLink>
-                <NavbarLink href="/about">About</NavbarLink>
-                <NavbarLink href="#">Docs</NavbarLink>
+                <NavbarLink href="/#pricing">Pricing</NavbarLink>
+                <NavbarLink href="/docs">Docs</NavbarLink>
                 <NavbarLink href="#" className="sm:hidden">
                   Log in
                 </NavbarLink>
@@ -112,7 +111,8 @@ export default function RootLayout({
               <>
                 <FooterCategory title="Product">
                   <FooterLink href="/">Home</FooterLink>
-                  <FooterLink href="/pricing">Pricing</FooterLink>
+                  <FooterLink href="/#pricing">Pricing</FooterLink>
+                  <FooterLink href="/docs">Docs</FooterLink>
                 </FooterCategory>
                 <FooterCategory title="Legal">
                   <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
