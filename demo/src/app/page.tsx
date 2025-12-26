@@ -292,7 +292,7 @@ export default function Page() {
                 <p>Tired of making similar edits? Setup custom presets with custom rules for dang near anything. Never sweat a boring a task again.</p>
               }
               cta={
-                <Link href="#">
+                <Link href="#pricing">
                   See pricing <ArrowNarrowRightIcon />
                 </Link>
               }
@@ -429,7 +429,7 @@ export default function Page() {
               Start now
             </ButtonLink>
 
-            <PlainButtonLink href="#" size="lg">
+            <PlainButtonLink href="#pricing" size="lg">
               See pricing <ChevronIcon />
             </PlainButtonLink>
           </div>
