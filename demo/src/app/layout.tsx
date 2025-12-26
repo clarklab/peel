@@ -1,5 +1,6 @@
 import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
 import { Main } from '@/components/elements/main'
+import { ChatWidget } from '@/components/chat-widget'
 import { BananaIcon } from '@/components/icons/banana-icon'
 import { GitHubIcon } from '@/components/icons/social/github-icon'
 import { XIcon } from '@/components/icons/social/x-icon'
@@ -65,6 +66,7 @@ export default function RootLayout({
       </head>
       <body>
         <>
+          <ChatWidget />
           <NavbarWithLinksActionsAndCenteredLogo
             id="navbar"
             links={
