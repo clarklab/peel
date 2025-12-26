@@ -19,8 +19,8 @@ function vibrateTyping() {
 }
 
 export function ChatWidget() {
-  const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
   const [shouldRender, setShouldRender] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
   const [hasInteracted, setHasInteracted] = useState(false)
@@ -35,7 +35,7 @@ export function ChatWidget() {
     }
   }, [])
 
-  // Show chat button after 4 seconds
+  // Show chat after 4 seconds
   useEffect(() => {
     if (hasInteracted) return
 
@@ -43,7 +43,9 @@ export function ChatWidget() {
       setShouldRender(true)
       // Small delay for animation
       requestAnimationFrame(() => {
-        setIsVisible(true)
+        requestAnimationFrame(() => {
+          setIsVisible(true)
+        })
       })
     }, 4000)
 
@@ -82,9 +84,9 @@ export function ChatWidget() {
     typeNextChar()
   }, [])
 
-  // Start conversation when chat opens
+  // Start conversation when chat becomes visible
   useEffect(() => {
-    if (isOpen && messages.length === 0) {
+    if (isVisible && messages.length === 0) {
       const firstMessage: Message = {
         id: 1,
         text: "Have you heard of Nano Banana? Imagine Photoshop run by a team of AI agents, ready to do any kind of image editing you need.",
@@ -116,21 +118,18 @@ export function ChatWidget() {
         })
       }, 400)
     }
-  }, [isOpen, messages.length, typeMessage])
-
-  const handleOpen = () => {
-    setIsOpen(true)
-  }
+  }, [isVisible, messages.length, typeMessage])
 
   const handleClose = () => {
-    setIsOpen(false)
-    setHasInteracted(true)
+    setIsClosing(true)
+    setIsVisible(false)
     if (typeof window !== 'undefined') {
       localStorage.setItem('peel-chat-dismissed', 'true')
     }
-    // Reset messages for next time (if they clear localStorage)
+    // Remove from DOM after animation
     setTimeout(() => {
-      setMessages([])
+      setHasInteracted(true)
+      setShouldRender(false)
     }, 300)
   }
 
@@ -142,14 +141,14 @@ export function ChatWidget() {
   if (!shouldRender || hasInteracted) return null
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
+    <div className="fixed bottom-6 right-6 z-50">
       {/* Chat Panel */}
       <div
         className={`
           transform transition-all duration-300 ease-out origin-bottom-right
-          ${isOpen
+          ${isVisible && !isClosing
             ? 'opacity-100 scale-100 translate-y-0'
-            : 'opacity-0 scale-95 translate-y-4 pointer-events-none'
+            : 'opacity-0 scale-95 translate-y-4'
           }
         `}
       >
@@ -162,7 +161,7 @@ export function ChatWidget() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-olive-950 dark:text-white">Peel</p>
-                <p className="text-xs text-olive-500 dark:text-olive-400">Online</p>
+                <p className="text-xs text-olive-500 dark:text-olive-400">Image Agent</p>
               </div>
             </div>
             <button
@@ -194,18 +193,18 @@ export function ChatWidget() {
                   {/* Action buttons - show after second message finishes typing */}
                   {message.showActions && !message.isTyping && message.displayedText.length > 0 && (
                     <div
-                      className="mt-3 flex flex-col gap-2 animate-fade-in"
+                      className="mt-3 flex flex-col gap-2"
                       style={{ animation: 'fadeIn 0.3s ease-out' }}
                     >
                       <button
                         onClick={handleLearnMore}
-                        className="w-full px-4 py-2.5 text-sm font-medium text-white bg-olive-950 hover:bg-olive-800 dark:bg-white dark:text-olive-950 dark:hover:bg-olive-100 rounded-xl transition-colors text-left"
+                        className="w-full px-4 py-2.5 text-sm font-medium text-white bg-olive-950 rounded-xl transition-all duration-200 text-left hover:bg-olive-800 hover:shadow-md active:scale-[0.98] dark:bg-white dark:text-olive-950 dark:hover:bg-olive-100"
                       >
                         Tell me more about Nano Banana Pro
                       </button>
                       <button
                         onClick={handleClose}
-                        className="w-full px-4 py-2.5 text-sm font-medium text-olive-700 hover:text-olive-950 bg-olive-100 hover:bg-olive-200 dark:text-olive-300 dark:hover:text-white dark:bg-olive-800 dark:hover:bg-olive-700 rounded-xl transition-colors text-left"
+                        className="w-full px-4 py-2.5 text-sm font-medium text-olive-700 bg-olive-100 rounded-xl transition-all duration-200 text-left hover:bg-olive-200 hover:text-olive-950 active:scale-[0.98] dark:text-olive-300 dark:bg-olive-800 dark:hover:bg-olive-700 dark:hover:text-white"
                       >
                         I already know
                       </button>
@@ -217,30 +216,6 @@ export function ChatWidget() {
           </div>
         </div>
       </div>
-
-      {/* Chat Toggle Button */}
-      <button
-        onClick={isOpen ? handleClose : handleOpen}
-        className={`
-          w-14 h-14 rounded-full bg-olive-950 dark:bg-white
-          shadow-lg shadow-olive-950/30 dark:shadow-black/30
-          flex items-center justify-center
-          transform transition-all duration-300 ease-out
-          hover:scale-110 active:scale-95
-          ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}
-        `}
-        aria-label={isOpen ? 'Close chat' : 'Open chat'}
-      >
-        <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-90' : 'rotate-0'}`}>
-          {isOpen ? (
-            <svg className="w-6 h-6 text-white dark:text-olive-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <BananaIcon className="w-7 h-7 text-white dark:text-olive-950" />
-          )}
-        </div>
-      </button>
 
       {/* Keyframe animation for fade in */}
       <style jsx>{`
