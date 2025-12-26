@@ -15,7 +15,7 @@ export function Screenshot({
   return (
     <Wallpaper color={wallpaper} data-placement={placement} className={clsx('group', className)} {...props}>
       <div className="relative [--padding:min(10%,--spacing(16))] group-data-[placement=bottom]:px-(--padding) group-data-[placement=bottom]:pt-(--padding) group-data-[placement=bottom-left]:pt-(--padding) group-data-[placement=bottom-left]:pr-(--padding) group-data-[placement=bottom-right]:pt-(--padding) group-data-[placement=bottom-right]:pl-(--padding) group-data-[placement=top]:px-(--padding) group-data-[placement=top]:pb-(--padding) group-data-[placement=top-left]:pr-(--padding) group-data-[placement=top-left]:pb-(--padding) group-data-[placement=top-right]:pb-(--padding) group-data-[placement=top-right]:pl-(--padding)">
-        <div className="*:relative *:ring-1 *:ring-black/10 group-data-[placement=bottom]:*:rounded-t-sm group-data-[placement=bottom-left]:*:rounded-tr-sm group-data-[placement=bottom-right]:*:rounded-tl-sm group-data-[placement=top]:*:rounded-b-sm group-data-[placement=top-left]:*:rounded-br-sm group-data-[placement=top-right]:*:rounded-bl-sm">
+        <div className="*:relative *:ring-1 *:ring-black/10 group-data-[placement=bottom]:*:rounded-t-2xl group-data-[placement=bottom-left]:*:rounded-tr-2xl group-data-[placement=bottom-right]:*:rounded-tl-2xl group-data-[placement=top]:*:rounded-b-2xl group-data-[placement=top-left]:*:rounded-br-2xl group-data-[placement=top-right]:*:rounded-bl-2xl">
           {children}
         </div>
       </div>

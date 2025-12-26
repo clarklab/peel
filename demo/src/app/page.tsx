@@ -287,9 +287,9 @@ export default function Page() {
                   />
                 </Screenshot>
               }
-              headline="Pay for what you use"
+              headline="Defeat repeat tasks"
               subheadline={
-                <p>No monthly fees. No commitment. Use it when you need it, pay for what you actually consume. Revolutionary, we know.</p>
+                <p>Tired of making similar edits? Setup custom presets with custom rules for dang near anything. Never sweat a boring a task again.</p>
               }
               cta={
                 <Link href="#">
