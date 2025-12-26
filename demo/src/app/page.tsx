@@ -145,7 +145,7 @@ export default function Page() {
       <FeaturesTwoColumnWithDemos
         id="features"
         eyebrow="Dead simple"
-        headline="Just like Nano Banana, but you actually want to use it."
+        headline="Just like Nano Banana Pro, but you actually want to use it."
         subheadline={
           <p>
             We took the best AI model and made it actually approachable. Faster, cleaner, better.
