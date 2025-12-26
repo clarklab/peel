@@ -3,8 +3,10 @@
 import { clsx } from 'clsx/lite'
 import Link from 'next/link'
 import type { ComponentProps, ReactNode } from 'react'
+import { useState } from 'react'
 import { Container } from '../elements/container'
 import { ArrowNarrowRightIcon } from '../icons/arrow-narrow-right-icon'
+import { CheckmarkIcon } from '../icons/checkmark-icon'
 
 export function FooterCategory({ title, children, ...props }: { title: ReactNode } & ComponentProps<'div'>) {
   return (
@@ -45,6 +47,8 @@ export function SocialLink({
   )
 }
 
+type FormStatus = 'idle' | 'loading' | 'success' | 'error'
+
 export function NewsletterForm({
   headline,
   subheadline,
@@ -54,28 +58,57 @@ export function NewsletterForm({
   headline: ReactNode
   subheadline: ReactNode
 } & ComponentProps<'form'>) {
+  const [status, setStatus] = useState<FormStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
+    setStatus('loading')
+    setErrorMessage('')
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
 
     try {
-      await fetch('/__forms.html', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData as any).toString(),
       })
-      // Optionally show success message or reset form
-      event.currentTarget.reset()
+
+      if (!response.ok) {
+        throw new Error('Submission failed')
+      }
+
+      setStatus('success')
+      form.reset()
     } catch (error) {
-      // Optionally handle error
       console.error('Form submission error:', error)
+      setStatus('error')
+      setErrorMessage('Something went wrong. Please try again.')
     }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className={clsx('flex max-w-sm flex-col gap-2', className)}>
+        <div className="flex items-center gap-2 text-olive-950 dark:text-white">
+          <CheckmarkIcon className="h-5 w-5" />
+          <p className="font-medium">You're subscribed!</p>
+        </div>
+        <p className="text-olive-700 dark:text-olive-400">
+          Thanks for signing up. We'll keep you posted on new features.
+        </p>
+      </div>
+    )
   }
 
   return (
     <form
       className={clsx('flex max-w-sm flex-col gap-2', className)}
       name="newsletter"
+      method="POST"
+      data-netlify="true"
       onSubmit={handleFormSubmit}
       {...props}
     >
@@ -89,16 +122,28 @@ export function NewsletterForm({
           placeholder="Email"
           aria-label="Email"
           required
-          className="flex-1 text-olive-950 focus:outline-hidden dark:text-white"
+          disabled={status === 'loading'}
+          className="flex-1 text-olive-950 focus:outline-hidden disabled:opacity-50 dark:text-white"
         />
         <button
           type="submit"
           aria-label="Subscribe"
-          className="relative inline-flex size-7 items-center justify-center rounded-full after:absolute after:-inset-2 hover:bg-olive-950/10 dark:hover:bg-white/10 after:pointer-fine:hidden"
+          disabled={status === 'loading'}
+          className="relative inline-flex size-7 items-center justify-center rounded-full after:absolute after:-inset-2 hover:bg-olive-950/10 disabled:opacity-50 dark:hover:bg-white/10 after:pointer-fine:hidden"
         >
-          <ArrowNarrowRightIcon />
+          {status === 'loading' ? (
+            <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+            </svg>
+          ) : (
+            <ArrowNarrowRightIcon />
+          )}
         </button>
       </div>
+      {status === 'error' && (
+        <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
+      )}
     </form>
   )
 }

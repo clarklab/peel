@@ -318,7 +318,7 @@ export default function Page() {
       <TestimonialThreeColumnGrid
         id="testimonial"
       >
-        <div className="col-span-full mx-auto max-w-2xl">
+        <div className="col-span-full mx-auto max-w-4xl">
           <figure className="flex flex-col items-center gap-10 text-center text-lg text-olive-950 dark:text-white">
             <blockquote className="relative flex flex-col gap-4 *:first:before:inline *:first:before:content-['\201c'] *:last:after:inline *:last:after:content-['\201d']">
               <p className="text-3xl md:text-5xl">
