@@ -104,7 +104,7 @@ export function ChatWidget() {
           setTimeout(() => {
             const secondMessage: Message = {
               id: 2,
-              text: "Want to learn more?",
+              text: "I can edit photos, do graphic tasks, and make images from scratch. Want to learn more?",
               isTyping: true,
               displayedText: '',
               showActions: true
