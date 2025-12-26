@@ -97,44 +97,44 @@ export default function Page() {
         footer={
           <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3">
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <Abstract1Icon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Zero setup.</h3>
+                <h3 className="font-display text-base font-semibold leading-snug text-olive-950 dark:text-white">Zero setup.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">From photo or text prompt, open Peel and start making images in seconds.</p>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <Abstract2Icon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">No API keys.</h3>
+                <h3 className="font-display text-base font-semibold leading-snug text-olive-950 dark:text-white">No API keys.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">You don't need to be a wizard to make and edit images. Or do be a wizard, we don't care.</p>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <Abstract3Icon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">On brand, always.</h3>
+                <h3 className="font-display text-base font-semibold leading-snug text-olive-950 dark:text-white">On brand, always.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Add brand colors, swap logos, never get stuck with a boring stock photo again.</p>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <Abstract4Icon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Big batch energy.</h3>
+                <h3 className="font-display text-base font-semibold leading-snug text-olive-950 dark:text-white">Big batch energy.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Edit one image or a dozen at a time, just don't tell your boss (or do, they'll love it).</p>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <Abstract5Icon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Custom presets.</h3>
+                <h3 className="font-display text-base font-semibold leading-snug text-olive-950 dark:text-white">Custom presets.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Save time on repeatable tasks, or define your own with deep customization.</p>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <Abstract6Icon className="h-5 w-5 text-olive-950 dark:text-white" />
-                <h3 className="font-display text-base font-semibold text-olive-950 dark:text-white">Intern ready.</h3>
+                <h3 className="font-display text-base font-semibold leading-snug text-olive-950 dark:text-white">Intern ready.</h3>
               </div>
               <p className="text-sm text-olive-700 dark:text-olive-400">Easy enough an intern can do it, powerful enough to replace a team of human editors.</p>
             </div>
