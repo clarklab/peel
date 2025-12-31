@@ -48,46 +48,18 @@ export default function Page() {
           <>
             <Screenshot className="rounded-md lg:hidden" placement="bottom-right">
               <Image
-                src="/img/screenshots/1-left-1670-top-1408.webp"
-                alt=""
-                width={1670}
-                height={1408}
-                className="bg-white/75 md:hidden dark:hidden"
-              />
-              <Image
-                src="/img/screenshots/1-color-olive-left-1670-top-1408.webp"
-                alt=""
-                width={1670}
-                height={1408}
-                className="bg-black/75 not-dark:hidden md:hidden"
-              />
-              <Image
-                src="/img/screenshots/1-left-2000-top-1408.webp"
-                alt=""
+                src="/img/screenshots/peel-preview.png"
+                alt="Peel batch image editor preview"
                 width={2000}
                 height={1408}
-                className="bg-white/75 max-md:hidden dark:hidden"
-              />
-              <Image
-                src="/img/screenshots/1-color-olive-left-2000-top-1408.webp"
-                alt=""
-                width={2000}
-                height={1408}
-                className="bg-black/75 not-dark:hidden max-md:hidden"
+                className="bg-white/75 dark:bg-black/75"
               />
             </Screenshot>
             <Screenshot className="rounded-3xl max-lg:hidden" placement="bottom">
               <Image
-                src="/img/screenshots/1.webp"
-                alt=""
-                className="bg-white/75 dark:hidden"
-                width={3440}
-                height={1990}
-              />
-              <Image
-                className="bg-black/75 not-dark:hidden"
-                src="/img/screenshots/1-color-olive.webp"
-                alt=""
+                src="/img/screenshots/peel-preview.png"
+                alt="Peel batch image editor preview"
+                className="bg-white/75 dark:bg-black/75"
                 width={3440}
                 height={1990}
               />
@@ -157,58 +129,9 @@ export default function Page() {
               demo={
                 <Screenshot placement="bottom-right">
                   <Image
-                    src="/img/screenshots/1-left-1000-top-800.webp"
-                    alt=""
-                    className="bg-white/75 sm:hidden dark:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-left-1000-top-800.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden sm:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-left-1800-top-660.webp"
-                    alt=""
-                    className="bg-white/75 max-sm:hidden lg:hidden dark:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-left-1800-top-660.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-sm:hidden lg:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-left-1300-top-1300.webp"
-                    alt=""
-                    className="bg-white/75 max-lg:hidden xl:hidden dark:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-left-1300-top-1300.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-lg:hidden xl:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-left-1800-top-1250.webp"
-                    alt=""
-                    className="bg-white/75 max-xl:hidden dark:hidden"
-                    width={1800}
-                    height={1250}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-left-1800-top-1250.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-xl:hidden"
+                    src="/img/screenshots/peel-interface-1.png"
+                    alt="Peel batch image editor interface"
+                    className="bg-white/75 dark:bg-black/75"
                     width={1800}
                     height={1250}
                   />
@@ -230,58 +153,9 @@ export default function Page() {
               demo={
                 <Screenshot placement="bottom-left">
                   <Image
-                    src="/img/screenshots/1-right-1000-top-800.webp"
-                    alt=""
-                    className="bg-white/75 sm:hidden dark:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-right-1000-top-800.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden sm:hidden"
-                    width={1000}
-                    height={800}
-                  />
-                  <Image
-                    src="/img/screenshots/1-right-1800-top-660.webp"
-                    alt=""
-                    className="bg-white/75 max-sm:hidden lg:hidden dark:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-right-1800-top-660.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-sm:hidden lg:hidden"
-                    width={1800}
-                    height={660}
-                  />
-                  <Image
-                    src="/img/screenshots/1-right-1300-top-1300.webp"
-                    alt=""
-                    className="bg-white/75 max-lg:hidden xl:hidden dark:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-right-1300-top-1300.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-lg:hidden xl:hidden"
-                    width={1300}
-                    height={1300}
-                  />
-                  <Image
-                    src="/img/screenshots/1-right-1800-top-1250.webp"
-                    alt=""
-                    className="bg-white/75 max-xl:hidden dark:hidden"
-                    width={1800}
-                    height={1250}
-                  />
-                  <Image
-                    src="/img/screenshots/1-color-olive-right-1800-top-1250.webp"
-                    alt=""
-                    className="bg-black/75 not-dark:hidden max-xl:hidden"
+                    src="/img/screenshots/peel-interface-2.png"
+                    alt="Peel batch image editor interface"
+                    className="bg-white/75 dark:bg-black/75"
                     width={1800}
                     height={1250}
                   />
