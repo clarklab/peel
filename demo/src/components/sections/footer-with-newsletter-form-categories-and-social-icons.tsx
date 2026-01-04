@@ -68,16 +68,26 @@ export function NewsletterForm({
 
     const form = event.currentTarget
     const formData = new FormData(form)
+    
+    // Debug: log what we're sending
+    const body = new URLSearchParams(formData as any).toString()
+    console.log('Submitting form with body:', body)
 
     try {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
+        body,
       })
 
+      // Debug: log the response
+      console.log('Response status:', response.status)
+      console.log('Response ok:', response.ok)
+      const responseText = await response.text()
+      console.log('Response body (first 500 chars):', responseText.substring(0, 500))
+
       if (!response.ok) {
-        throw new Error('Submission failed')
+        throw new Error(`Submission failed with status ${response.status}`)
       }
 
       setStatus('success')
