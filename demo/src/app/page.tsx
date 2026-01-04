@@ -1,6 +1,7 @@
 import { ButtonLink, PlainButtonLink, SoftButtonLink } from '@/components/elements/button'
 import { Link } from '@/components/elements/link'
 import { Screenshot } from '@/components/elements/screenshot'
+import { WorkflowDemo } from '@/components/elements/workflow-demo'
 import { Abstract1Icon } from '@/components/icons/abstract-1-icon'
 import { Abstract2Icon } from '@/components/icons/abstract-2-icon'
 import { Abstract3Icon } from '@/components/icons/abstract-3-icon'
@@ -46,22 +47,32 @@ export default function Page() {
         }
         demo={
           <>
-            <Screenshot className="rounded-md lg:hidden" placement="bottom-right">
-              <Image
-                src="/img/screenshots/peel-preview.png"
-                alt="Peel batch image editor preview"
-                width={2000}
-                height={1408}
-                className="bg-white/75 dark:bg-black/75"
+            <Screenshot className="!overflow-visible rounded-md lg:hidden" placement="bottom">
+              <WorkflowDemo
+                className="rounded-t-xl"
+                backgroundImage={
+                  <Image
+                    src="/img/screenshots/peel-preview.webp"
+                    alt="Peel batch image editor preview"
+                    width={2000}
+                    height={1408}
+                    className="rounded-t-xl bg-white/75 dark:bg-black/75"
+                  />
+                }
               />
             </Screenshot>
-            <Screenshot className="rounded-3xl max-lg:hidden" placement="bottom">
-              <Image
-                src="/img/screenshots/peel-preview.png"
-                alt="Peel batch image editor preview"
-                className="bg-white/75 dark:bg-black/75"
-                width={3440}
-                height={1990}
+            <Screenshot className="!overflow-visible rounded-3xl max-lg:hidden" placement="bottom">
+              <WorkflowDemo
+                className="rounded-t-2xl"
+                backgroundImage={
+                  <Image
+                    src="/img/screenshots/peel-preview.webp"
+                    alt="Peel batch image editor preview"
+                    className="rounded-t-2xl bg-white/75 dark:bg-black/75"
+                    width={3440}
+                    height={1990}
+                  />
+                }
               />
             </Screenshot>
           </>
