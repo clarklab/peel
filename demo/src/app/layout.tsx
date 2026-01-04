@@ -4,7 +4,6 @@ import { ChatWidget } from '@/components/chat-widget'
 import { BananaIcon } from '@/components/icons/banana-icon'
 import { GitHubIcon } from '@/components/icons/social/github-icon'
 import { XIcon } from '@/components/icons/social/x-icon'
-import { YouTubeIcon } from '@/components/icons/social/youtube-icon'
 import {
   FooterCategory,
   FooterLink,
@@ -127,14 +126,11 @@ export default function RootLayout({
             fineprint="© 2025 Peel"
             socialLinks={
               <>
-                <SocialLink href="https://x.com" name="X">
+                <SocialLink href="https://x.com/clarklab" name="X">
                   <XIcon />
                 </SocialLink>
-                <SocialLink href="https://github.com" name="GitHub">
+                <SocialLink href="https://github.com/clarklab/nano-brandana" name="GitHub">
                   <GitHubIcon />
-                </SocialLink>
-                <SocialLink href="https://www.youtube.com" name="YouTube">
-                  <YouTubeIcon />
                 </SocialLink>
               </>
             }

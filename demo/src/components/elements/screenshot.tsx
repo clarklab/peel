@@ -6,15 +6,22 @@ export function Screenshot({
   children,
   wallpaper,
   placement,
+  compact,
   className,
   ...props
 }: {
   wallpaper?: 'green' | 'blue' | 'purple' | 'brown' | 'yellow'
   placement: 'bottom' | 'bottom-left' | 'bottom-right' | 'top' | 'top-left' | 'top-right'
+  compact?: boolean
 } & Omit<ComponentProps<'div'>, 'color'>) {
   return (
     <Wallpaper color={wallpaper} data-placement={placement} className={clsx('group', className)} {...props}>
-      <div className="relative [--padding:min(5%,--spacing(8))] md:[--padding:min(10%,--spacing(16))] group-data-[placement=bottom]:px-(--padding) group-data-[placement=bottom]:pt-(--padding) group-data-[placement=bottom-left]:pt-(--padding) group-data-[placement=bottom-left]:pr-(--padding) group-data-[placement=bottom-right]:pt-(--padding) group-data-[placement=bottom-right]:pl-(--padding) group-data-[placement=top]:px-(--padding) group-data-[placement=top]:pb-(--padding) group-data-[placement=top-left]:pr-(--padding) group-data-[placement=top-left]:pb-(--padding) group-data-[placement=top-right]:pb-(--padding) group-data-[placement=top-right]:pl-(--padding)">
+      <div className={clsx(
+        'relative group-data-[placement=bottom]:px-(--padding) group-data-[placement=bottom]:pt-(--padding) group-data-[placement=bottom-left]:pt-(--padding) group-data-[placement=bottom-left]:pr-(--padding) group-data-[placement=bottom-right]:pt-(--padding) group-data-[placement=bottom-right]:pl-(--padding) group-data-[placement=top]:px-(--padding) group-data-[placement=top]:pb-(--padding) group-data-[placement=top-left]:pr-(--padding) group-data-[placement=top-left]:pb-(--padding) group-data-[placement=top-right]:pb-(--padding) group-data-[placement=top-right]:pl-(--padding)',
+        compact
+          ? '[--padding:--spacing(4)] md:[--padding:min(7%,--spacing(10))]'
+          : '[--padding:min(5%,--spacing(8))] md:[--padding:min(10%,--spacing(16))]'
+      )}>
         <div className="*:relative group-data-[placement=bottom]:*:rounded-t-2xl group-data-[placement=bottom-left]:*:rounded-tr-2xl group-data-[placement=bottom-right]:*:rounded-tl-2xl group-data-[placement=top]:*:rounded-b-2xl group-data-[placement=top-left]:*:rounded-br-2xl group-data-[placement=top-right]:*:rounded-bl-2xl">
           {children}
         </div>

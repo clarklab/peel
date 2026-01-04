@@ -9,6 +9,7 @@ import { Abstract4Icon } from '@/components/icons/abstract-4-icon'
 import { Abstract5Icon } from '@/components/icons/abstract-5-icon'
 import { Abstract6Icon } from '@/components/icons/abstract-6-icon'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
+import { MaterialIcon } from '@/components/icons/material-icon'
 import { ChevronIcon } from '@/components/icons/chevron-icon'
 import { LightingBoltIcon } from '@/components/icons/lighting-bolt-icon'
 import { RocketIcon } from '@/components/icons/rocket-icon'
@@ -40,13 +41,13 @@ export default function Page() {
               Start now
             </ButtonLink>
 
-            <PlainButtonLink href="#" size="lg">
+            <PlainButtonLink href="#demo" size="lg">
               See it in action <ArrowNarrowRightIcon />
             </PlainButtonLink>
           </div>
         }
         demo={
-          <>
+          <div id="demo">
             <Screenshot className="!overflow-visible rounded-md lg:hidden" placement="bottom">
               <WorkflowDemo
                 className="rounded-t-xl"
@@ -75,7 +76,7 @@ export default function Page() {
                 }
               />
             </Screenshot>
-          </>
+          </div>
         }
         footer={
           <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3">
@@ -137,18 +138,24 @@ export default function Page() {
         features={
           <>
             <Feature
+              reversed
               demo={
-                <Screenshot placement="bottom-right">
+                <Screenshot placement="bottom" compact>
                   <Image
-                    src="/img/screenshots/peel-interface-1.png"
-                    alt="Peel batch image editor interface"
-                    className="bg-white/75 dark:bg-black/75"
+                    src="/img/screenshots/feature-batch.webp"
+                    alt="Batch image processing"
+                    className="rounded-t-xl bg-white/75 dark:bg-black/75"
                     width={1800}
                     height={1250}
                   />
                 </Screenshot>
               }
-              headline="Make one image or hundreds"
+              headline={
+                <span className="flex items-center gap-2">
+                  <MaterialIcon name="grid_view" className="text-xl text-olive-500" />
+                  Make one image or hundreds
+                </span>
+              }
               subheadline={
                 <p>
                   From big batches to tiny copy edits. Seriously. No API keys to manage, no credentials to lose, no configs to mess up. Just start.
@@ -161,24 +168,86 @@ export default function Page() {
               }
             />
             <Feature
+              reversed
               demo={
-                <Screenshot placement="bottom-left">
+                <Screenshot placement="bottom" compact>
                   <Image
-                    src="/img/screenshots/peel-interface-2.png"
-                    alt="Peel batch image editor interface"
-                    className="bg-white/75 dark:bg-black/75"
+                    src="/img/screenshots/feature-presets.webp"
+                    alt="Custom presets"
+                    className="rounded-t-xl bg-white/75 dark:bg-black/75"
                     width={1800}
                     height={1250}
                   />
                 </Screenshot>
               }
-              headline="Defeat repeat tasks"
+              headline={
+                <span className="flex items-center gap-2">
+                  <MaterialIcon name="discover_tune" className="text-xl text-olive-500" />
+                  Defeat repeat tasks
+                </span>
+              }
               subheadline={
                 <p>Tired of making similar edits? Setup custom presets with custom rules for dang near anything. Never sweat a boring a task again.</p>
               }
               cta={
-                <Link href="#pricing">
-                  See pricing <ArrowNarrowRightIcon />
+                <Link href="#">
+                  Get started <ArrowNarrowRightIcon />
+                </Link>
+              }
+            />
+            <Feature
+              reversed
+              demo={
+                <Screenshot placement="bottom" compact>
+                  <Image
+                    src="/img/screenshots/feature-persona.webp"
+                    alt="Picture perfect presets"
+                    className="rounded-t-xl bg-white/75 dark:bg-black/75"
+                    width={1800}
+                    height={1250}
+                  />
+                </Screenshot>
+              }
+              headline={
+                <span className="flex items-center gap-2">
+                  <MaterialIcon name="photo_prints" className="text-xl text-olive-500" />
+                  Picture perfect presets
+                </span>
+              }
+              subheadline={
+                <p>Upload your photos, logos, or layouts and Peel will use them in a perfect match. Or save yourself as a persona.</p>
+              }
+              cta={
+                <Link href="#">
+                  Get started <ArrowNarrowRightIcon />
+                </Link>
+              }
+            />
+            <Feature
+              reversed
+              demo={
+                <Screenshot placement="bottom" compact>
+                  <Image
+                    src="/img/screenshots/feature-tokens.webp"
+                    alt="Token tracking"
+                    className="rounded-t-xl bg-white/75 dark:bg-black/75"
+                    width={1800}
+                    height={1250}
+                  />
+                </Screenshot>
+              }
+              headline={
+                <span className="flex items-center gap-2">
+                  <MaterialIcon name="toll" className="text-xl text-olive-500" />
+                  Keep track of every token
+                </span>
+              }
+              subheadline={
+                <p>Track every incoming and outgoing API call token price, and never pay for failed or rejected calls. Pro Plans get tokens at literal cost.</p>
+              }
+              cta={
+                <Link href="#">
+                  Get started <ArrowNarrowRightIcon />
                 </Link>
               }
             />
@@ -189,15 +258,15 @@ export default function Page() {
       <StatsWithGraph
         id="stats"
         eyebrow="Work Faster"
-        headline="Our numbers speak for themselves."
+        headline="Hand crafted edits, just with way more hands."
         subheadline={
           <p>
-            Peel is already powering dozens of projects. From solo devs to entire teams, we make Nano Banana actually usable.
+            Peel is already powering dozens of projects. It can certainly help with yours. From solo devs to entire teams, we make Nano Banana actually usable.
           </p>
         }
       >
-        <Stat stat="15s" text="Average response time. Nano Banana is fast. Peel just made it better." />
-        <Stat stat="Zero" text="AI or API setup steps. Literally zero. We counted." />
+        <Stat stat="15s" text="Average response time. Nano Banana is fast. Peel just made it better and easier." />
+        <Stat stat="Zero" text="AI or API setup steps. Literally zero. We counted. Just prompt and go." />
       </StatsWithGraph>
       {/* Testimonial */}
       <TestimonialThreeColumnGrid
@@ -207,7 +276,7 @@ export default function Page() {
           <figure className="flex flex-col items-center gap-10 text-center text-lg text-olive-950 dark:text-white">
             <blockquote className="relative flex flex-col gap-4 *:first:before:inline *:first:before:content-['\201c'] *:last:after:inline *:last:after:content-['\201d']">
               <p className="text-3xl md:text-5xl">
-                I was skeptical about building another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana doing what it does best.
+                I was skeptical about building another wrapper tool, but Peel just works. No friction, no surprises, just Nano Banana Pro doing what it does best.
               </p>
             </blockquote>
             <figcaption className="flex flex-col items-center gap-4">
