@@ -366,6 +366,7 @@ export default function Page() {
               price="$90"
               subheadline={<p>1,000,000 tokens at near-cost pricing.</p>}
               badge="Best value"
+              variant="highlighted"
               features={[
                 'Full Nano Banana Pro access',
                 '1,000,000 tokens included',
