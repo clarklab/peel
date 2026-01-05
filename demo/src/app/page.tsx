@@ -347,7 +347,6 @@ export default function Page() {
               name="Pro"
               price="$35"
               subheadline={<p>250,000 tokens for power users.</p>}
-              badge="Best value"
               features={[
                 'Full Nano Banana Pro access',
                 '250,000 tokens included',
@@ -366,6 +365,7 @@ export default function Page() {
               name="Power"
               price="$90"
               subheadline={<p>1,000,000 tokens at near-cost pricing.</p>}
+              badge="Best value"
               features={[
                 'Full Nano Banana Pro access',
                 '1,000,000 tokens included',
@@ -375,9 +375,9 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <SoftButtonLink href="https://banana.peel.diy" size="lg">
+                <ButtonLink href="https://banana.peel.diy" size="lg">
                   Start now
-                </SoftButtonLink>
+                </ButtonLink>
               }
             />
           </>
