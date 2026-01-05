@@ -162,7 +162,7 @@ export default function Page() {
                 </p>
               }
               cta={
-                <Link href="#">
+                <Link href="https://banana.peel.diy">
                   Get started <ArrowNarrowRightIcon />
                 </Link>
               }
@@ -190,7 +190,7 @@ export default function Page() {
                 <p>Tired of making similar edits? Setup custom presets with custom rules for dang near anything. Never sweat a boring a task again.</p>
               }
               cta={
-                <Link href="#">
+                <Link href="https://banana.peel.diy">
                   Get started <ArrowNarrowRightIcon />
                 </Link>
               }
@@ -218,7 +218,7 @@ export default function Page() {
                 <p>Upload your photos, logos, or layouts and Peel will use them in a perfect match. Or save yourself as a persona.</p>
               }
               cta={
-                <Link href="#">
+                <Link href="https://banana.peel.diy">
                   Get started <ArrowNarrowRightIcon />
                 </Link>
               }
@@ -246,7 +246,7 @@ export default function Page() {
                 <p>Track every incoming and outgoing API call token price, and never pay for failed or rejected calls. Pro Plans get tokens at literal cost.</p>
               }
               cta={
-                <Link href="#">
+                <Link href="https://banana.peel.diy">
                   Get started <ArrowNarrowRightIcon />
                 </Link>
               }
