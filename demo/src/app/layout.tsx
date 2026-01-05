@@ -91,7 +91,7 @@ export default function RootLayout({
             }
             actions={
               <>
-                <ButtonLink href="https://nano.wims.vc">Start now</ButtonLink>
+                <ButtonLink href="https://banana.peel.diy">Start now</ButtonLink>
               </>
             }
           />

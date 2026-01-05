@@ -37,7 +37,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="https://nano.wims.vc" size="lg">
+            <ButtonLink href="https://banana.peel.diy" size="lg">
               Start now
             </ButtonLink>
 
@@ -339,7 +339,7 @@ export default function Page() {
                 'Pay only for what you use',
               ]}
               cta={
-                <ButtonLink href="https://nano.wims.vc" size="lg">
+                <ButtonLink href="https://banana.peel.diy" size="lg">
                   Start now
                 </ButtonLink>
               }
@@ -359,7 +359,7 @@ export default function Page() {
                 'Pay only for what you use',
               ]}
               cta={
-                <ButtonLink href="https://nano.wims.vc" size="lg">
+                <ButtonLink href="https://banana.peel.diy" size="lg">
                   Start now
                 </ButtonLink>
               }
@@ -379,7 +379,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="https://nano.wims.vc" size="lg">
+            <ButtonLink href="https://banana.peel.diy" size="lg">
               Start now
             </ButtonLink>
 
