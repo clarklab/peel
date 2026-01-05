@@ -1,5 +1,6 @@
 import { ButtonLink, PlainButtonLink, SoftButtonLink } from '@/components/elements/button'
 import { Link } from '@/components/elements/link'
+import { PartnerLogos } from '@/components/elements/partner-logos'
 import { Screenshot } from '@/components/elements/screenshot'
 import { WorkflowDemo } from '@/components/elements/workflow-demo'
 import { Abstract1Icon } from '@/components/icons/abstract-1-icon'
@@ -76,6 +77,9 @@ export default function Page() {
                 }
               />
             </Screenshot>
+            <div className="mt-12 mb-4 px-6 lg:mt-16 lg:mb-6 lg:px-8">
+              <PartnerLogos />
+            </div>
           </div>
         }
         footer={
