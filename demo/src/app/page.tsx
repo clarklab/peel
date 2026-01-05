@@ -327,43 +327,58 @@ export default function Page() {
         plans={
           <>
             <Plan
-              name="Pay as you go"
-              price="$0.20"
-              period="/request"
-              subheadline={<p>No monthly fee. No commitment. Just use it.</p>}
+              name="Starter"
+              price="$5"
+              subheadline={<p>25,000 tokens to get started. No commitment.</p>}
               features={[
                 'Full Nano Banana Pro access',
+                '25,000 tokens included',
                 'No API keys needed',
                 'No setup required',
                 'Instant start',
-                'Pay only for what you use',
               ]}
               cta={
                 <ButtonLink href="https://banana.peel.diy" size="lg">
                   Start now
                 </ButtonLink>
               }
-              badge="$5 to start"
             />
             <Plan
-              name="Pay as you go PRO"
-              price="$0.15"
-              period="/request"
-              subheadline={<p>No monthly fee. No commitment. Just use it.</p>}
+              name="Pro"
+              price="$35"
+              subheadline={<p>250,000 tokens for power users.</p>}
+              badge="Best value"
               features={[
                 'Full Nano Banana Pro access',
-                'Zero markup tokens',
+                '250,000 tokens included',
                 'No API keys needed',
                 'No setup required',
                 'Instant start',
-                'Pay only for what you use',
+                'Priority support',
               ]}
               cta={
                 <ButtonLink href="https://banana.peel.diy" size="lg">
                   Start now
                 </ButtonLink>
               }
-              badge="$17 to start"
+            />
+            <Plan
+              name="Power"
+              price="$90"
+              subheadline={<p>1,000,000 tokens at near-cost pricing.</p>}
+              features={[
+                'Full Nano Banana Pro access',
+                '1,000,000 tokens included',
+                'Near-cost token pricing',
+                'No API keys needed',
+                'No setup required',
+                'Priority support',
+              ]}
+              cta={
+                <SoftButtonLink href="https://banana.peel.diy" size="lg">
+                  Start now
+                </SoftButtonLink>
+              }
             />
           </>
         }
