@@ -6,11 +6,18 @@ export function NavbarLink({
   children,
   href,
   className,
+  onClick,
   ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
     <a
       href={href}
+      onClick={(e) => {
+        // Close the mobile menu when clicking a nav link
+        const dialog = document.getElementById('mobile-menu') as HTMLDialogElement | null
+        dialog?.close()
+        onClick?.(e)
+      }}
       className={clsx(
         'group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white',
         className,
