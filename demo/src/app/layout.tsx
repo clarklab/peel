@@ -12,6 +12,7 @@ import {
   SocialLink,
 } from '@/components/sections/footer-with-newsletter-form-categories-and-social-icons'
 import {
+  NavbarButtonLink,
   NavbarLink,
   NavbarLogo,
   NavbarWithLinksActionsAndCenteredLogo,
@@ -76,9 +77,9 @@ export default function RootLayout({
               <>
                 <NavbarLink href="/#pricing">Pricing</NavbarLink>
                 <NavbarLink href="/docs">Docs</NavbarLink>
-                <NavbarLink href="#" className="sm:hidden">
-                  Log in
-                </NavbarLink>
+                <NavbarButtonLink href="https://banana.peel.diy/" className="mt-4 sm:hidden">
+                  Get Started
+                </NavbarButtonLink>
               </>
             }
             logo={
