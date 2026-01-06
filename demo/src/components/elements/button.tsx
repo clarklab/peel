@@ -15,7 +15,7 @@ export function Button({
   ...props
 }: {
   size?: keyof typeof sizes
-  color?: 'dark/light' | 'light'
+  color?: 'dark/light' | 'light' | 'yellow'
 } & ComponentProps<'button'>) {
   return (
     <button
@@ -25,6 +25,7 @@ export function Button({
         color === 'dark/light' &&
           'bg-olive-950 text-white hover:bg-[#EFD009] hover:text-olive-950 dark:bg-olive-300 dark:text-olive-950 dark:hover:bg-[#EFD009]',
         color === 'light' && 'hover bg-white text-olive-950 hover:bg-olive-100 dark:bg-olive-100 dark:hover:bg-white',
+        color === 'yellow' && 'bg-[#EFD009] text-olive-950 hover:bg-[#d4ba08]',
         sizes[size],
         className,
       )}
@@ -42,7 +43,7 @@ export function ButtonLink({
 }: {
   href: string
   size?: keyof typeof sizes
-  color?: 'dark/light' | 'light'
+  color?: 'dark/light' | 'light' | 'yellow'
 } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
     <Link
@@ -52,6 +53,7 @@ export function ButtonLink({
         color === 'dark/light' &&
           'bg-olive-950 text-white hover:bg-[#EFD009] hover:text-olive-950 dark:bg-olive-300 dark:text-olive-950 dark:hover:bg-[#EFD009]',
         color === 'light' && 'hover bg-white text-olive-950 hover:bg-olive-100 dark:bg-olive-100 dark:hover:bg-white',
+        color === 'yellow' && 'bg-[#EFD009] text-olive-950 hover:bg-[#d4ba08]',
         sizes[size],
         className,
       )}

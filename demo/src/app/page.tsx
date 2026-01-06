@@ -376,7 +376,7 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <ButtonLink href="https://banana.peel.diy" size="lg">
+                <ButtonLink href="https://banana.peel.diy" size="lg" color="yellow">
                   Start now
                 </ButtonLink>
               }
