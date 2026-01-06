@@ -6,6 +6,7 @@ export function NavbarLink({
   children,
   href,
   className,
+  onClick,
   ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
@@ -13,6 +14,12 @@ export function NavbarLink({
       href={href}
       command="close"
       commandfor="mobile-menu"
+      onClick={(e) => {
+        // Close the mobile menu when clicking a nav link
+        const dialog = document.getElementById('mobile-menu') as HTMLDialogElement | null
+        dialog?.close()
+        onClick?.(e)
+      }}
       className={clsx(
         'group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white',
         className,
@@ -37,6 +44,7 @@ export function NavbarButtonLink({
   children,
   href,
   className,
+  onClick,
   ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
   return (
@@ -44,6 +52,12 @@ export function NavbarButtonLink({
       href={href}
       command="close"
       commandfor="mobile-menu"
+      onClick={(e) => {
+        // Close the mobile menu when clicking a nav link
+        const dialog = document.getElementById('mobile-menu') as HTMLDialogElement | null
+        dialog?.close()
+        onClick?.(e)
+      }}
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-1 rounded-full bg-olive-950 px-4 py-2 text-xl font-medium text-white hover:bg-olive-800 dark:bg-olive-300 dark:text-olive-950 dark:hover:bg-olive-200',
         className,
