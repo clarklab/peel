@@ -83,7 +83,7 @@ export default function Page() {
           </div>
         }
         footer={
-          <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3">
+          <div className="mt-2 grid grid-cols-2 gap-6 md:grid-cols-3">
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
                 <Abstract1Icon className="h-5 w-5 text-olive-950 dark:text-white" />

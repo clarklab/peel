@@ -6,7 +6,7 @@ function LogoLabel({ children, className, ...props }: ComponentProps<'span'>) {
   return (
     <span
       className={clsx(
-        'absolute -top-5 left-0 text-[10px] font-medium uppercase tracking-wider text-olive-500 dark:text-olive-400',
+        'absolute bottom-full left-0 mb-1 text-[10px] font-medium uppercase tracking-wider text-olive-500 dark:text-olive-400',
         className
       )}
       {...props}
@@ -21,7 +21,7 @@ function Logo({ src, alt, size = 'normal', className, ...props }: { src: string;
     <div 
       className={clsx(
         'flex items-end',
-        size === 'normal' && 'h-5 sm:h-6 md:h-7 lg:h-8',
+        size === 'normal' && 'h-4 sm:h-5 md:h-6 lg:h-7',
         size === 'large' && 'h-6 sm:h-7 md:h-8 lg:h-10',
         className
       )} 
@@ -48,38 +48,47 @@ export function PartnerLogos({ className, ...props }: ComponentProps<'div'>) {
       {...props}
     >
       {/* Used by - Superfun */}
-      <div className="relative hidden md:block">
+      <div className="relative hidden h-7 items-end md:flex lg:h-10">
         <LogoLabel>Used by</LogoLabel>
         <Logo src="/img/logos/logo-superfun.svg" alt="Superfun" />
       </div>
 
       {/* Wims */}
-      <Logo src="/img/logos/logo-wims.svg" alt="Wims" className="hidden md:flex" />
+      <div className="hidden h-7 items-end md:flex lg:h-10">
+        <Logo src="/img/logos/logo-wims.svg" alt="Wims" />
+      </div>
 
       {/* Powered by - Gemini */}
-      <div className="relative hidden md:block">
+      <div className="relative hidden h-7 items-end md:flex lg:h-10">
         <LogoLabel>Powered by</LogoLabel>
         <Logo src="/img/logos/logo-gemini.svg" alt="Gemini" size="large" />
       </div>
 
       {/* Vercel */}
-      <Logo src="/img/logos/logo-vercel.svg" alt="Vercel" size="large" className="hidden md:flex" />
-
-      {/* Netlify */}
-      <Logo src="/img/logos/logo-netlify.svg" alt="Netlify" size="large" className="hidden md:flex" />
-
-      {/* Mobile layout - grouped */}
-      <div className="flex w-full items-end gap-8 md:hidden">
-        <div className="relative">
-          <LogoLabel>Used by</LogoLabel>
-          <Logo src="/img/logos/logo-superfun.svg" alt="Superfun" className="!h-7 sm:!h-8" />
-        </div>
-        <Logo src="/img/logos/logo-wims.svg" alt="Wims" className="!h-7 sm:!h-8" />
+      <div className="hidden h-7 items-end md:flex lg:h-10">
+        <Logo src="/img/logos/logo-vercel.svg" alt="Vercel" size="large" />
       </div>
 
-      <div className="flex w-full items-end gap-6 md:hidden">
-        <div className="relative flex-1 flex justify-center">
-          <LogoLabel>Powered by</LogoLabel>
+      {/* Netlify */}
+      <div className="hidden h-7 items-end md:flex lg:h-10">
+        <Logo src="/img/logos/logo-netlify.svg" alt="Netlify" size="large" />
+      </div>
+
+      {/* Mobile layout - grouped */}
+      <div className="relative flex w-full items-end gap-6 md:hidden">
+        <LogoLabel>Used by</LogoLabel>
+        <div className="flex-1 flex justify-center">
+          <Logo src="/img/logos/logo-superfun.svg" alt="Superfun" className="!h-6 sm:!h-7" />
+        </div>
+        <div className="flex-1 flex justify-center">
+          <Logo src="/img/logos/logo-wims.svg" alt="Wims" className="!h-6 sm:!h-7" />
+        </div>
+        <div className="flex-1" /> {/* Empty column to align with Powered by */}
+      </div>
+
+      <div className="relative flex w-full items-end gap-6 md:hidden">
+        <LogoLabel>Powered by</LogoLabel>
+        <div className="flex-1 flex justify-center">
           <Logo src="/img/logos/logo-gemini.svg" alt="Gemini" size="large" className="!h-9 sm:!h-11" />
         </div>
         <div className="flex-1 flex justify-center">
