@@ -3,17 +3,23 @@ import { clsx } from 'clsx/lite'
 import Link from 'next/link'
 import type { ComponentProps, ReactNode } from 'react'
 
+// Experimental Invoker Commands API attributes (not yet in React's types)
+type InvokerProps = {
+  command?: string
+  commandfor?: string
+}
+
 export function NavbarLink({
   children,
   href,
   className,
   ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
+  const invokerProps: InvokerProps = { command: 'close', commandfor: 'mobile-menu' }
   return (
     <Link
       href={href}
-      command="close"
-      commandfor="mobile-menu"
+      {...(invokerProps as any)}
       className={clsx(
         'group inline-flex items-center justify-between gap-2 text-3xl/10 font-medium text-olive-950 lg:text-sm/7 dark:text-white',
         className,
@@ -40,11 +46,11 @@ export function NavbarButtonLink({
   className,
   ...props
 }: { href: string } & Omit<ComponentProps<'a'>, 'href'>) {
+  const invokerProps: InvokerProps = { command: 'close', commandfor: 'mobile-menu' }
   return (
     <Link
       href={href}
-      command="close"
-      commandfor="mobile-menu"
+      {...(invokerProps as any)}
       className={clsx(
         'inline-flex shrink-0 items-center justify-center gap-1 rounded-full bg-olive-950 px-4 py-2 text-xl font-medium text-white hover:bg-olive-800 dark:bg-olive-300 dark:text-olive-950 dark:hover:bg-olive-200',
         className,
