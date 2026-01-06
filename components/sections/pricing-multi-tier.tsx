@@ -12,6 +12,7 @@ export function Plan({
   features,
   cta,
   className,
+  variant = 'default',
 }: {
   name: ReactNode
   price: ReactNode
@@ -20,33 +21,70 @@ export function Plan({
   badge?: ReactNode
   features: ReactNode[]
   cta: ReactNode
+  variant?: 'default' | 'highlighted'
 } & ComponentProps<'div'>) {
+  const isHighlighted = variant === 'highlighted'
+
   return (
     <div
       className={clsx(
-        'flex flex-col justify-between gap-6 rounded-xl bg-olive-950/2.5 p-6 sm:items-start dark:bg-white/5',
+        'flex flex-col justify-between gap-6 rounded-xl p-6 sm:items-start',
+        isHighlighted ? 'bg-olive-950 dark:bg-white' : 'bg-olive-950/2.5 dark:bg-white/5',
         className,
       )}
     >
       <div className="self-stretch">
         <div className="flex items-center justify-between">
           {badge && (
-            <div className="order-last inline-flex rounded-full bg-olive-950/10 px-2 text-xs/6 font-medium text-olive-950 dark:bg-white/10 dark:text-white">
+            <div
+              className={clsx(
+                'order-last inline-flex rounded-full px-2 text-xs/6 font-medium',
+                isHighlighted
+                  ? 'bg-white/10 text-white dark:bg-olive-950/10 dark:text-olive-950'
+                  : 'bg-olive-950/10 text-olive-950 dark:bg-white/10 dark:text-white',
+              )}
+            >
               {badge}
             </div>
           )}
 
-          <h3 className="text-2xl/8 tracking-tight text-olive-950 dark:text-white">{name}</h3>
+          <h3
+            className={clsx(
+              'text-2xl/8 tracking-tight',
+              isHighlighted ? 'text-white dark:text-olive-950' : 'text-olive-950 dark:text-white',
+            )}
+          >
+            {name}
+          </h3>
         </div>
         <p className="mt-1 inline-flex gap-1 text-base/7">
-          <span className="text-olive-950 dark:text-white">{price}</span>
+          <span className={isHighlighted ? 'text-white dark:text-olive-950' : 'text-olive-950 dark:text-white'}>
+            {price}
+          </span>
           {period && <span className="text-olive-500 dark:text-olive-500">{period}</span>}
         </p>
-        <div className="mt-4 flex flex-col gap-4 text-sm/6 text-olive-700 dark:text-olive-400">{subheadline}</div>
-        <ul className="mt-4 space-y-2 text-sm/6 text-olive-700 dark:text-olive-400">
+        <div
+          className={clsx(
+            'mt-4 flex flex-col gap-4 text-sm/6',
+            isHighlighted ? 'text-olive-300 dark:text-olive-600' : 'text-olive-700 dark:text-olive-400',
+          )}
+        >
+          {subheadline}
+        </div>
+        <ul
+          className={clsx(
+            'mt-4 space-y-2 text-sm/6',
+            isHighlighted ? 'text-olive-300 dark:text-olive-600' : 'text-olive-700 dark:text-olive-400',
+          )}
+        >
           {features.map((feature, index) => (
             <li key={index} className="flex gap-4">
-              <CheckmarkIcon className="h-lh shrink-0 stroke-olive-950 dark:stroke-white" />
+              <CheckmarkIcon
+                className={clsx(
+                  'h-lh shrink-0',
+                  isHighlighted ? 'stroke-white dark:stroke-olive-950' : 'stroke-olive-950 dark:stroke-white',
+                )}
+              />
               <p>{feature}</p>
             </li>
           ))}
