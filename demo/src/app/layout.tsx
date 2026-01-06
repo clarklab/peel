@@ -117,6 +117,7 @@ export default function RootLayout({
                   <FooterLink href="/">Home</FooterLink>
                   <FooterLink href="/#pricing">Pricing</FooterLink>
                   <FooterLink href="/docs">Docs</FooterLink>
+                  <FooterLink href="https://wims.vc/contact/">Contact</FooterLink>
                 </FooterCategory>
                 <FooterCategory title="Legal">
                   <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
