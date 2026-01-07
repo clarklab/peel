@@ -4,66 +4,110 @@ import Link from 'next/link'
 export default function Page() {
   return (
     <>
-      <DocumentCentered id="document" headline="Privacy Policy" subheadline={<p>Last updated on December 19, 2025.</p>}>
+      <DocumentCentered id="document" headline="Privacy Policy" subheadline={<p>Last updated on January 7, 2026.</p>}>
         <p>
-          Company Inc. ("<strong>Company</strong>," "<strong>we</strong>," "<strong>us</strong>
-          ," or "<strong>our</strong>") respects your privacy and is committed to protecting your personal information.
-          This Privacy Policy describes, in general terms, how we collect, use, store, and protect information when you
-          interact with our websites, products, or services (collectively, the "<strong>Services</strong>"). This policy
-          is provided for informational purposes and is intended to be a general example only.
+          This privacy policy explains how Peel ("<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>")
+          collects, uses, and protects your information when you use our website and services.
         </p>
-        <h2>Information We Collect and How We Use It</h2>
-        <p>
-          We may collect information that you voluntarily provide to us when you interact with the Services, such as
-          when you contact us, create an account, or otherwise communicate with us. This information may include basic
-          personal or account details, such as your name, email address, or similar contact information.
-        </p>
-        <p>
-          We may also automatically collect limited technical or usage information when you use the Services. This may
-          include information such as browser type, device or operating system details, IP address, and general usage
-          data.
-        </p>
-        <p>Information we collect may be used for purposes such as:</p>
+
+        <h2>What Information We Collect</h2>
+        <p>We collect information in a few ways:</p>
         <ul>
-          <li>Providing and maintaining the Services</li>
-          <li>Responding to inquiries and communications</li>
-          <li>Improving features and functionality</li>
-          <li>Complying with applicable legal obligations</li>
+          <li>
+            <strong>Information you give us:</strong> When you sign up, contact us, or use our services, you may provide
+            your name, email address, or other contact details.
+          </li>
+          <li>
+            <strong>Information collected automatically:</strong> When you visit our website, we automatically collect
+            some technical information like your IP address, browser type, device type, and how you use our site.
+          </li>
+          <li>
+            <strong>Cookies and tracking:</strong> We use cookies and similar technologies to understand how people use
+            our website and to show you relevant ads. This includes working with advertising partners like Reddit.
+          </li>
         </ul>
-        <h2>Sharing, Retention, and Security of Information</h2>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide and improve our services</li>
+          <li>Respond to your questions and requests</li>
+          <li>Send you updates about our services (if you signed up for them)</li>
+          <li>Show you relevant advertisements</li>
+          <li>Understand how people use our website so we can make it better</li>
+          <li>Comply with legal requirements</li>
+        </ul>
+
+        <h2>Advertising and Third-Party Services</h2>
         <p>
-          We do not sell your personal information. We may share information with third-party service providers who
-          perform services on our behalf, such as hosting or technical support, and only to the extent necessary for
-          them to perform those services. We may also disclose information if required to do so by law or in response to
-          valid legal requests.
+          We work with advertising partners, including Reddit, to show you ads and measure how well our ads perform.
+          These partners may collect information about your visits to our website using cookies or similar technologies.
         </p>
         <p>
-          We retain information only for as long as reasonably necessary to fulfill the purposes described in this
-          Privacy Policy, unless a longer retention period is required or permitted by law.
+          When you interact with our ads on platforms like Reddit, those platforms may share information with us about
+          your interaction. We use this information to understand which ads are working and to improve our marketing.
         </p>
         <p>
-          We take reasonable administrative, technical, and organizational measures designed to protect information from
-          unauthorized access, use, alteration, or disclosure. However, no method of transmission over the internet or
-          method of electronic storage is completely secure, and we cannot guarantee absolute security.
+          For more information about how Reddit handles your data, you can read the{' '}
+          <Link href="https://www.reddit.com/policies/privacy-policy" className="underline underline-offset-4">
+            Reddit Privacy Policy
+          </Link>.
         </p>
-        <h2>Your Choices, Updates, and Contact Information</h2>
+
+        <h2>Who We Share Your Information With</h2>
+        <p>We do not sell your personal information. We may share your information with:</p>
+        <ul>
+          <li>
+            <strong>Service providers:</strong> Companies that help us run our business, like hosting providers and
+            email services. They can only use your information to help us.
+          </li>
+          <li>
+            <strong>Advertising partners:</strong> To show you relevant ads and measure ad performance.
+          </li>
+          <li>
+            <strong>Legal requirements:</strong> If we are required to by law, or to protect our rights.
+          </li>
+        </ul>
+
+        <h2>Your Choices and Rights</h2>
+        <p>You have choices about your information:</p>
+        <ul>
+          <li>
+            <strong>Cookies:</strong> Most browsers let you block or delete cookies. Note that this may affect how our
+            website works for you.
+          </li>
+          <li>
+            <strong>Marketing emails:</strong> You can unsubscribe from our emails by clicking the unsubscribe link at
+            the bottom of any email.
+          </li>
+          <li>
+            <strong>Your data:</strong> Depending on where you live, you may have the right to access, correct, or
+            delete your personal information. Contact us to make a request.
+          </li>
+        </ul>
+
+        <h2>How We Protect Your Information</h2>
         <p>
-          You may choose not to provide certain information to us, though doing so may limit your ability to use some
-          features of the Services. Depending on your location, you may have certain rights regarding your personal
-          information under applicable laws.
+          We use reasonable security measures to protect your information. However, no website or internet transmission
+          is completely secure, so we cannot guarantee absolute security.
         </p>
+
+        <h2>How Long We Keep Your Information</h2>
         <p>
-          We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "
-          <strong>Last updated</strong>" date at the top of this page. Continued use of the Services after any changes
-          indicates acceptance of the updated policy.
+          We keep your information only as long as we need it for the purposes described in this policy, or as required
+          by law.
         </p>
-        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+
+        <h2>Changes to This Policy</h2>
         <p>
-          <strong>Company Inc.</strong>
-          <br />
-          Email: <Link href="mailto:privacy@company.example">privacy@company.example</Link>
-          <br />
-          Address: 123 Demo Street, Example City, Country
+          We may update this policy from time to time. If we make changes, we will update the date at the top of this
+          page. Your continued use of our services after changes means you accept the updated policy.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions about this privacy policy or your personal information, contact us at:</p>
+        <p>
+          Email: <Link href="mailto:privacy@peel.diy" className="underline underline-offset-4">privacy@peel.diy</Link>
         </p>
       </DocumentCentered>
     </>
