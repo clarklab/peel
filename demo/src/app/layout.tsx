@@ -121,7 +121,7 @@ export default function RootLayout({
                 </FooterCategory>
                 <FooterCategory title="Legal">
                   <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
-                  <FooterLink href="#">Terms of Service</FooterLink>
+                  <FooterLink href="/terms">Terms and Conditions</FooterLink>
                 </FooterCategory>
               </>
             }
