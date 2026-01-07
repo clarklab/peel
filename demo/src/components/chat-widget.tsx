@@ -134,7 +134,7 @@ export function ChatWidget() {
   }
 
   const handleLearnMore = () => {
-    window.open('https://blog.google/products/gemini/updated-image-editing-model/', '_blank')
+    window.open('https://blog.google/technology/ai/nano-banana-pro/', '_blank')
     handleClose()
   }
 
@@ -198,7 +198,7 @@ export function ChatWidget() {
                     >
                       <button
                         onClick={handleLearnMore}
-                        className="w-full px-4 py-2.5 text-sm font-medium text-white bg-olive-950 rounded-xl transition-all duration-200 text-left hover:bg-olive-800 hover:shadow-md active:scale-[0.98] dark:bg-white dark:text-olive-950 dark:hover:bg-olive-100"
+                        className="w-full px-4 py-2.5 text-sm font-medium text-white bg-olive-950 rounded-xl transition-all duration-200 text-left hover:bg-[#EFD009] hover:text-olive-950 hover:shadow-md active:scale-[0.98] dark:bg-white dark:text-olive-950 dark:hover:bg-[#EFD009]"
                       >
                         Tell me more about Nano Banana Pro
                       </button>
