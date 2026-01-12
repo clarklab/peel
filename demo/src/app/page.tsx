@@ -39,7 +39,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <AuthAwareCTA size="lg" defaultText="Start now" />
+            <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
 
             <PlainButtonLink href="#demo" size="lg">
               See it in action <ArrowNarrowRightIcon />
@@ -341,7 +341,7 @@ export default function Page() {
                 'Instant start',
               ]}
               cta={
-                <AuthAwareCTA size="lg" defaultText="Start now" />
+                <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
               }
             />
             <Plan
@@ -357,7 +357,7 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <AuthAwareCTA size="lg" defaultText="Start now" />
+                <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
               }
             />
             <Plan
@@ -375,7 +375,7 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <AuthAwareCTA size="lg" defaultText="Start now" color="yellow" />
+                <AuthAwareCTA size="lg" defaultText="Start now" color="yellow" showWelcomeLabel={false} />
               }
             />
           </>
@@ -392,7 +392,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <AuthAwareCTA size="lg" defaultText="Start now" />
+            <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
 
             <PlainButtonLink href="#pricing" size="lg">
               See pricing <ChevronIcon />
