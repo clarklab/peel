@@ -17,6 +17,7 @@ import {
   NavbarLogo,
   NavbarWithLinksActionsAndCenteredLogo,
 } from '@/components/sections/navbar-with-links-actions-and-centered-logo'
+import { AuthAwareCTA } from '@/components/auth-aware-cta'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import './globals.css'
@@ -77,9 +78,6 @@ export default function RootLayout({
               <>
                 <NavbarLink href="/#pricing">Pricing</NavbarLink>
                 <NavbarLink href="/docs">Docs</NavbarLink>
-                <NavbarButtonLink href="https://banana.peel.diy/" className="mt-4 sm:hidden">
-                  Get Started
-                </NavbarButtonLink>
               </>
             }
             logo={
@@ -92,7 +90,7 @@ export default function RootLayout({
             }
             actions={
               <>
-                <ButtonLink href="https://banana.peel.diy">Start now</ButtonLink>
+                <AuthAwareCTA size="md" defaultText="Start now" showWelcomeLabel={false} />
               </>
             }
           />
