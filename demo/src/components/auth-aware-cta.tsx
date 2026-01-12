@@ -26,25 +26,14 @@ export function AuthAwareCTA({
   const welcomeText = 'Welcome back!'
 
   useEffect(() => {
-    // Check for auth token in localStorage
-    // Common token keys used by authentication systems
+    // Check for peel_logged_in cookie (set by banana.peel.diy on login)
     const checkAuth = () => {
       if (typeof window !== 'undefined') {
-        const tokenKeys = [
-          'peel_auth_token',
-          'auth_token',
-          'access_token',
-          'token',
-          'jwt',
-          'authToken',
-        ]
+        const hasAuthCookie = document.cookie
+          .split('; ')
+          .some(cookie => cookie.startsWith('peel_logged_in='))
 
-        const hasToken = tokenKeys.some(key => {
-          const value = localStorage.getItem(key)
-          return value !== null && value !== '' && value !== 'undefined'
-        })
-
-        setIsLoggedIn(hasToken)
+        setIsLoggedIn(hasAuthCookie)
         setIsLoading(false)
       }
     }
