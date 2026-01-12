@@ -47,11 +47,12 @@ export function AuthAwareCTA({
       let currentIndex = 0
       const timers: NodeJS.Timeout[] = []
 
-      // Show cursor and blink twice before typing (2 blinks = ~1s)
+      // Show cursor and blink twice quickly (~600ms)
       setShowCursor(true)
 
-      // Start typing after 2 blinks (~1000ms)
+      // Hide cursor and start typing after 2 quick blinks
       const startTyping = setTimeout(() => {
+        setShowCursor(false)
         const typeNextChar = () => {
           if (currentIndex <= welcomeText.length) {
             setDisplayedText(welcomeText.slice(0, currentIndex))
@@ -59,16 +60,11 @@ export function AuthAwareCTA({
 
             if (currentIndex <= welcomeText.length) {
               timers.push(setTimeout(typeNextChar, 50))
-            } else {
-              // Done typing, blink 3 more times (~1500ms) then hide cursor
-              timers.push(setTimeout(() => {
-                setShowCursor(false)
-              }, 1500))
             }
           }
         }
         typeNextChar()
-      }, 1000)
+      }, 600)
 
       timers.push(startTyping)
 
@@ -89,7 +85,7 @@ export function AuthAwareCTA({
     return (
       <div className="flex items-center gap-3">
         {showWelcomeLabel && (
-          <span className="inline-flex justify-end w-[6.5rem] text-sm font-medium text-olive-700 dark:text-olive-400">
+          <span className="inline-flex justify-end text-sm font-semibold text-olive-700 whitespace-nowrap dark:text-olive-400">
             {displayedText}
             {showCursor && (
               <span className="inline-block w-0.5 h-3.5 bg-olive-600 dark:bg-olive-400 ml-0.5 animate-pulse" />
