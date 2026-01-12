@@ -20,6 +20,10 @@ export function AuthAwareCTA({
 }: AuthAwareCTAProps) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [displayedText, setDisplayedText] = useState('')
+  const [isTyping, setIsTyping] = useState(false)
+
+  const welcomeText = 'Welcome back!'
 
   useEffect(() => {
     // Check for auth token in localStorage
@@ -48,6 +52,34 @@ export function AuthAwareCTA({
     checkAuth()
   }, [])
 
+  // Typewriter effect for welcome message
+  useEffect(() => {
+    if (isLoggedIn && showWelcomeLabel && !isLoading) {
+      setIsTyping(true)
+      let currentIndex = 0
+
+      const typeNextChar = () => {
+        if (currentIndex <= welcomeText.length) {
+          setDisplayedText(welcomeText.slice(0, currentIndex))
+          currentIndex++
+
+          if (currentIndex <= welcomeText.length) {
+            setTimeout(typeNextChar, 50) // 50ms per character for smooth typing
+          } else {
+            setIsTyping(false)
+          }
+        }
+      }
+
+      // Start typing after a small delay
+      const timer = setTimeout(() => {
+        typeNextChar()
+      }, 200)
+
+      return () => clearTimeout(timer)
+    }
+  }, [isLoggedIn, showWelcomeLabel, isLoading])
+
   // During SSR or initial load, show default text
   if (isLoading) {
     return (
@@ -62,7 +94,10 @@ export function AuthAwareCTA({
       <div className="flex flex-col items-center gap-2">
         {showWelcomeLabel && (
           <span className="text-sm font-medium text-olive-700 dark:text-olive-400">
-            Welcome back!
+            {displayedText}
+            {isTyping && (
+              <span className="inline-block w-0.5 h-3.5 bg-olive-600 dark:bg-olive-400 ml-0.5 animate-pulse" />
+            )}
           </span>
         )}
         <ButtonLink href="https://banana.peel.diy" size={size} color={color} className={className}>
