@@ -8,6 +8,7 @@ export default function Page() {
         <h3>🗂️ staticDAM Integration</h3>
         <ul>
           <li>Send your new images straight to your team's DAM</li>
+          <li>Files instantly backed by GitHub, with a PR</li>
         </ul>
 
         <h3>🎒 UX Update</h3>
