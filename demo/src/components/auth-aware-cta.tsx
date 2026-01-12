@@ -21,7 +21,7 @@ export function AuthAwareCTA({
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [displayedText, setDisplayedText] = useState('')
-  const [isTyping, setIsTyping] = useState(false)
+  const [showCursor, setShowCursor] = useState(false)
 
   const welcomeText = 'Welcome back!'
 
@@ -41,31 +41,38 @@ export function AuthAwareCTA({
     checkAuth()
   }, [])
 
-  // Typewriter effect for welcome message
+  // Typewriter effect with cursor blinking
   useEffect(() => {
     if (isLoggedIn && showWelcomeLabel && !isLoading) {
-      setIsTyping(true)
       let currentIndex = 0
+      const timers: NodeJS.Timeout[] = []
 
-      const typeNextChar = () => {
-        if (currentIndex <= welcomeText.length) {
-          setDisplayedText(welcomeText.slice(0, currentIndex))
-          currentIndex++
+      // Show cursor and blink twice before typing (2 blinks = ~1s)
+      setShowCursor(true)
 
+      // Start typing after 2 blinks (~1000ms)
+      const startTyping = setTimeout(() => {
+        const typeNextChar = () => {
           if (currentIndex <= welcomeText.length) {
-            setTimeout(typeNextChar, 50) // 50ms per character for smooth typing
-          } else {
-            setIsTyping(false)
+            setDisplayedText(welcomeText.slice(0, currentIndex))
+            currentIndex++
+
+            if (currentIndex <= welcomeText.length) {
+              timers.push(setTimeout(typeNextChar, 50))
+            } else {
+              // Done typing, blink 3 more times (~1500ms) then hide cursor
+              timers.push(setTimeout(() => {
+                setShowCursor(false)
+              }, 1500))
+            }
           }
         }
-      }
-
-      // Start typing after a small delay
-      const timer = setTimeout(() => {
         typeNextChar()
-      }, 200)
+      }, 1000)
 
-      return () => clearTimeout(timer)
+      timers.push(startTyping)
+
+      return () => timers.forEach(t => clearTimeout(t))
     }
   }, [isLoggedIn, showWelcomeLabel, isLoading])
 
@@ -83,10 +90,10 @@ export function AuthAwareCTA({
       <div className="flex items-center gap-3">
         {showWelcomeLabel && (
           <span className="inline-flex justify-end w-[6.5rem] text-sm font-medium text-olive-700 dark:text-olive-400">
-            {isTyping && (
-              <span className="inline-block w-0.5 h-3.5 bg-olive-600 dark:bg-olive-400 mr-0.5 animate-pulse" />
-            )}
             {displayedText}
+            {showCursor && (
+              <span className="inline-block w-0.5 h-3.5 bg-olive-600 dark:bg-olive-400 ml-0.5 animate-pulse" />
+            )}
           </span>
         )}
         <ButtonLink href="https://banana.peel.diy" size={size} color={color} className={className}>
