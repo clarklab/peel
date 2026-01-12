@@ -80,13 +80,13 @@ export function AuthAwareCTA({
 
   if (isLoggedIn) {
     return (
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex items-center gap-3">
         {showWelcomeLabel && (
-          <span className="text-sm font-medium text-olive-700 dark:text-olive-400">
-            {displayedText}
+          <span className="inline-flex justify-end w-[6.5rem] text-sm font-medium text-olive-700 dark:text-olive-400">
             {isTyping && (
-              <span className="inline-block w-0.5 h-3.5 bg-olive-600 dark:bg-olive-400 ml-0.5 animate-pulse" />
+              <span className="inline-block w-0.5 h-3.5 bg-olive-600 dark:bg-olive-400 mr-0.5 animate-pulse" />
             )}
+            {displayedText}
           </span>
         )}
         <ButtonLink href="https://banana.peel.diy" size={size} color={color} className={className}>
