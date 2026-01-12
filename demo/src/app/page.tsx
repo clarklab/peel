@@ -22,6 +22,7 @@ import { HeroLeftAlignedWithDemo } from '@/components/sections/hero-left-aligned
 import { Plan, PricingMultiTier } from '@/components/sections/pricing-multi-tier'
 import { Stat, StatsWithGraph } from '@/components/sections/stats-with-graph'
 import { Testimonial, TestimonialThreeColumnGrid } from '@/components/sections/testimonials-three-column-grid'
+import { AuthAwareCTA } from '@/components/auth-aware-cta'
 import Image from 'next/image'
 
 export default function Page() {
@@ -38,9 +39,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="https://banana.peel.diy" size="lg">
-              Start now
-            </ButtonLink>
+            <AuthAwareCTA size="lg" defaultText="Start now" />
 
             <PlainButtonLink href="#demo" size="lg">
               See it in action <ArrowNarrowRightIcon />
@@ -342,9 +341,7 @@ export default function Page() {
                 'Instant start',
               ]}
               cta={
-                <ButtonLink href="https://banana.peel.diy" size="lg">
-                  Start now
-                </ButtonLink>
+                <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
               }
             />
             <Plan
@@ -360,9 +357,7 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <ButtonLink href="https://banana.peel.diy" size="lg">
-                  Start now
-                </ButtonLink>
+                <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
               }
             />
             <Plan
@@ -380,9 +375,7 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <ButtonLink href="https://banana.peel.diy" size="lg" color="yellow">
-                  Start now
-                </ButtonLink>
+                <AuthAwareCTA size="lg" defaultText="Start now" color="yellow" showWelcomeLabel={false} />
               }
             />
           </>
@@ -399,9 +392,7 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="https://banana.peel.diy" size="lg">
-              Start now
-            </ButtonLink>
+            <AuthAwareCTA size="lg" defaultText="Start now" />
 
             <PlainButtonLink href="#pricing" size="lg">
               See pricing <ChevronIcon />
