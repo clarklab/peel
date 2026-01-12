@@ -7,7 +7,7 @@ export default function Page() {
         <h2>January 12, 2026</h2>
         <h3>🗂️ staticDAM Integration</h3>
         <ul>
-          <li>Connect your staticDAM library to use assets directly in Peel</li>
+          <li>Send your new images straight to your team's DAM</li>
         </ul>
 
         <h3>🎒 UX Update</h3>
