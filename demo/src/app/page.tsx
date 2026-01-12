@@ -341,7 +341,7 @@ export default function Page() {
                 'Instant start',
               ]}
               cta={
-                <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
+                <AuthAwareCTA size="lg" defaultText="Start now" />
               }
             />
             <Plan
@@ -357,7 +357,7 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <AuthAwareCTA size="lg" defaultText="Start now" showWelcomeLabel={false} />
+                <AuthAwareCTA size="lg" defaultText="Start now" />
               }
             />
             <Plan
@@ -375,7 +375,7 @@ export default function Page() {
                 'Priority support',
               ]}
               cta={
-                <AuthAwareCTA size="lg" defaultText="Start now" color="yellow" showWelcomeLabel={false} />
+                <AuthAwareCTA size="lg" defaultText="Start now" color="yellow" />
               }
             />
           </>

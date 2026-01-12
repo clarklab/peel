@@ -90,7 +90,7 @@ export default function RootLayout({
             }
             actions={
               <>
-                <AuthAwareCTA size="md" defaultText="Start now" showWelcomeLabel={false} />
+                <AuthAwareCTA size="md" defaultText="Start now" />
               </>
             }
           />
