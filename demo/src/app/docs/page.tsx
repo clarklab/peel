@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { clsx } from 'clsx/lite'
 import { BookOpenIcon } from '@/components/icons/book-open-icon'
+import { CogIcon } from '@/components/icons/cog-icon'
 import { RocketIcon } from '@/components/icons/rocket-icon'
 import { PhotoIcon } from '@/components/icons/photo-icon'
 import { SlidersIcon } from '@/components/icons/sliders-icon'
@@ -29,6 +30,16 @@ const navigation: NavItem[] = [
     children: [
       { id: 'prompting-with-images', label: 'Prompting with Images' },
       { id: 'prompting-with-text', label: 'Prompting with Text' },
+    ],
+  },
+  {
+    id: 'output-settings',
+    label: 'Output Settings',
+    icon: <CogIcon className="size-4" />,
+    children: [
+      { id: 'quality', label: 'Quality' },
+      { id: 'aspect-ratio', label: 'Aspect Ratio' },
+      { id: 'custom-size', label: 'Custom Size' },
     ],
   },
   { id: 'batch-jobs', label: 'Batch Jobs', icon: <Square3Stack3dIcon className="size-4" /> },
@@ -510,6 +521,208 @@ high-end commercial style, sharp focus"`}</CodeBlock>
                 <strong>Pro tip:</strong> Save your best prompts! When you find a prompt structure that works well for your needs, you can create a custom preset to reuse it across future sessions. This is especially valuable for maintaining brand consistency.
               </Callout>
             </SubSection>
+          </Section>
+
+          {/* Output Settings */}
+          <Section id="output-settings" title="Output Settings">
+            <p>
+              Control the size, quality, and dimensions of your generated images with Peel's flexible output settings. Whether you need quick drafts for iteration or print-ready 4K images, these controls give you precise control over your output—all accessible from the chat footer.
+            </p>
+
+            <SubSection id="quality" title="Quality">
+              <p>
+                The quality setting determines the resolution tier for generated images. Choose based on your end use—quick iterations don't need 4K, but print materials do.
+              </p>
+              <div className="mt-4 overflow-hidden rounded-xl border border-olive-200 dark:border-olive-700">
+                <table className="w-full text-sm">
+                  <thead className="bg-olive-100 dark:bg-olive-800">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Setting</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Resolution</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Best For</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-olive-200 bg-white dark:divide-olive-700 dark:bg-olive-900">
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">SD</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">~1024px</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Quick drafts, thumbnails, social media icons</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">HD</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">~2048px</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Web graphics, social posts, presentations</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">4K</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">~4096px</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Print materials, large displays, hero images</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-4">
+                The quality picker appears in the chat footer. Click to select your preferred resolution before generating.
+              </p>
+              <Callout type="tip">
+                <strong>Pro tip:</strong> Higher quality takes slightly longer to generate and costs more tokens. Start with SD for rapid iteration, then regenerate your favorites at higher quality when you're happy with the result.
+              </Callout>
+            </SubSection>
+
+            <SubSection id="aspect-ratio" title="Aspect Ratio">
+              <p>
+                Choose from preset aspect ratios optimized for common use cases. The ratio picker appears next to the quality picker in the chat footer.
+              </p>
+              <div className="mt-4 overflow-hidden rounded-xl border border-olive-200 dark:border-olive-700">
+                <table className="w-full text-sm">
+                  <thead className="bg-olive-100 dark:bg-olive-800">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Ratio</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Name</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Common Uses</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-olive-200 bg-white dark:divide-olive-700 dark:bg-olive-900">
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Auto</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">AI Decides</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Let the AI choose the best ratio for your content</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">1:1</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Square</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram posts, profile pictures, app icons</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">4:5</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Portrait</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram portrait, Pinterest pins</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">9:16</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Story</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram/TikTok stories, mobile wallpapers</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">16:9</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Wide</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">YouTube thumbnails, presentations, desktop wallpapers</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">3:2</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Photo</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Traditional photo prints, camera aspect ratio</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <Callout type="tip">
+                <strong>Know your platform:</strong> Use Story (9:16) for TikTok/Reels, Wide (16:9) for YouTube thumbnails. When unsure, start with Auto and let the AI optimize for your content.
+              </Callout>
+            </SubSection>
+
+            <SubSection id="custom-size" title="Custom Size">
+              <Callout type="info">
+                <strong>Peel Exclusive:</strong> Custom Size is a unique Peel feature—Nano Banana doesn't natively support exact pixel dimensions. Peel handles all the complexity behind the scenes, so you simply get images at exactly the size you specify.
+              </Callout>
+              <p className="mt-4">
+                Need a specific size like 400×600 or 1920×1080? Custom Size lets you specify exact pixel dimensions for your output, perfect for matching design templates or platform requirements.
+              </p>
+              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">How to Use</h4>
+              <ol className="list-inside list-decimal space-y-2 pl-1">
+                <li>Click the <strong>Ratio Picker</strong> in the chat footer</li>
+                <li>Select <strong>Custom Size</strong> at the bottom of the menu</li>
+                <li>Enter your desired <strong>Width</strong> and <strong>Height</strong> in pixels</li>
+                <li>Click <strong>Apply</strong></li>
+                <li>Generate your image—it will be delivered at exactly those dimensions</li>
+              </ol>
+              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">How It Works</h4>
+              <p>
+                When you specify custom dimensions, Peel automatically handles the complexity:
+              </p>
+              <ol className="list-inside list-decimal space-y-2 pl-1">
+                <li><strong>Calculates the closest aspect ratio</strong> — Your dimensions are matched to the nearest supported ratio (1:1, 4:5, 9:16, etc.) to ensure optimal generation quality</li>
+                <li><strong>Selects the appropriate quality tier</strong> — Based on your largest dimension: up to 1024px → SD, 1025–2048px → HD, 2049px+ → 4K</li>
+                <li><strong>Generates the image</strong> at optimal settings</li>
+                <li><strong>Resizes to your exact dimensions</strong> — The final image is precisely cropped and scaled to match your specifications</li>
+              </ol>
+              <p className="mt-4">
+                This process is automatic and invisible—you simply receive an image at exactly the size you requested.
+              </p>
+              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">Specifications</h4>
+              <ul className="list-inside list-disc space-y-2 pl-1">
+                <li><strong>Minimum size:</strong> 256×256 pixels</li>
+                <li><strong>Maximum size:</strong> Limited by 4K generation (~4096px on longest edge)</li>
+                <li><strong>Cropping:</strong> Minimal, center-weighted cropping is applied when aspect ratios don't match exactly</li>
+              </ul>
+              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">Examples</h4>
+              <div className="mt-4 overflow-hidden rounded-xl border border-olive-200 dark:border-olive-700">
+                <table className="w-full text-sm">
+                  <thead className="bg-olive-100 dark:bg-olive-800">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Custom Size</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Matched Ratio</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Quality</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-olive-200 bg-white dark:divide-olive-700 dark:bg-olive-900">
+                    <tr>
+                      <td className="px-4 py-3 font-mono text-olive-950 dark:text-white">400×600</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">2:3</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">SD</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Email graphics</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-mono text-olive-950 dark:text-white">1080×1080</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">1:1</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">HD</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram post</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-mono text-olive-950 dark:text-white">1920×1080</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">16:9</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">HD</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">YouTube thumbnail</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-mono text-olive-950 dark:text-white">1080×1920</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">9:16</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">HD</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram story</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-mono text-olive-950 dark:text-white">800×600</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">4:3</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">SD</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Blog images</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-mono text-olive-950 dark:text-white">2400×3000</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">4:5</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">4K</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Print poster</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <Callout type="tip">
+                <strong>Tips for best results:</strong> Sizes close to standard ratios produce better results with less cropping. When in doubt, start larger—you can always scale down, but scaling up loses quality. Match your template exactly by entering dimensions from your design software.
+              </Callout>
+            </SubSection>
+
+            <h4 className="pt-8 font-display text-lg font-semibold text-olive-950 dark:text-white">Settings Location</h4>
+            <p>
+              All output settings appear in the chat footer, to the left of the message input:
+            </p>
+            <CodeBlock>{`┌─────────────────────────────────────────────────────┐
+│  [SD ▾] [Auto ▾]  │  Type your instructions...  │ ▶ │
+└─────────────────────────────────────────────────────┘
+     ↑        ↑
+  Quality   Ratio`}</CodeBlock>
+            <p className="mt-4">
+              Settings persist across generations until you change them. When using Custom Size, the ratio picker displays your dimensions (e.g., "400×600") instead of a ratio name.
+            </p>
           </Section>
 
           {/* Batch Jobs */}

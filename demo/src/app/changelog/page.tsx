@@ -4,6 +4,16 @@ export default function Page() {
   return (
     <>
       <DocumentCentered id="changelog" headline="Changelog" subheadline={<p>Recent updates and improvements to Peel.</p>}>
+        <h2>January 13, 2026</h2>
+        <h3>🎚️ Output Controls</h3>
+        <ul>
+          <li><strong>Quality Picker</strong> — Choose output resolution: SD (1K), HD (2K), or 4K. Moved from the generate button to a dedicated inline picker for easier access.</li>
+          <li><strong>Aspect Ratio Picker</strong> — Select from preset aspect ratios: Auto (AI decides), Square (1:1), Portrait (4:5), Story (9:16), Wide (16:9), and Photo (3:2).</li>
+          <li><strong>Custom Size / Exact Dimensions</strong> — Specify exact pixel dimensions (e.g., 400×600) for your output images. The system automatically selects optimal generation settings and resizes to your exact specifications. Minimum size: 256×256.</li>
+          <li><strong>Improved Controls Layout</strong> — Quality and ratio pickers now appear as compact inline controls in the chat footer, keeping the interface clean while making settings more accessible.</li>
+          <li><strong>Relocated Cancel Button</strong> — The "Cancel Job" action now appears in the Results column header near the timer for better visibility during processing.</li>
+        </ul>
+
         <h2>January 12, 2026</h2>
         <h3>🗂️ staticDAM Integration</h3>
         <ul>
