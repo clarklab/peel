@@ -5,6 +5,14 @@ export default function Page() {
     <>
       <DocumentCentered id="changelog" headline="Changelog" subheadline={<p>Recent updates and improvements to Peel.</p>}>
         <h2>January 13, 2026</h2>
+        <h3>📁 Image File Tuning</h3>
+        <ul>
+          <li><strong>Download Modal</strong> — Export as WEBP, PNG, or JPG with custom filenames. Select images and download as ZIP.</li>
+          <li><strong>Large File Handling</strong> — Auto-detect and compress images over 4MB, with option to rename or skip.</li>
+          <li><strong>Free Resize</strong> — Resize locally without AI when only changing size/ratio—instant and free.</li>
+          <li><strong>Fix</strong> — Preset aspect ratios now work correctly for AI images.</li>
+        </ul>
+
         <h3>🎚️ Output Controls</h3>
         <ul>
           <li><strong>Quality Picker</strong> — Choose output resolution: SD (1K), HD (2K), or 4K. Moved from the generate button to a dedicated inline picker for easier access.</li>
