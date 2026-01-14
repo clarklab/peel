@@ -15,7 +15,6 @@ import { BeakerIcon } from '@/components/icons/beaker-icon'
 import { CloudArrowDownIcon } from '@/components/icons/cloud-arrow-down-icon'
 import { ArchiveBoxIcon } from '@/components/icons/archive-box-icon'
 import { ArrowDownArrowUpIcon } from '@/components/icons/arrow-down-arrow-up-icon'
-import { Squares2StackedIcon } from '@/components/icons/squares-2-stacked-icon'
 
 type NavItem = {
   id: string
@@ -66,15 +65,6 @@ const navigation: NavItem[] = [
   { id: 'download-modal', label: 'Download Modal', icon: <CloudArrowDownIcon className="size-4" /> },
   { id: 'large-file-handling', label: 'Large File Handling', icon: <ArchiveBoxIcon className="size-4" /> },
   { id: 'free-local-resize', label: 'Free Local Resize', icon: <ArrowDownArrowUpIcon className="size-4" /> },
-  {
-    id: 'aspect-ratio-presets',
-    label: 'Aspect Ratio Presets',
-    icon: <Squares2StackedIcon className="size-4" />,
-    children: [
-      { id: 'available-presets', label: 'Available Presets' },
-      { id: 'custom-size-details', label: 'Custom Size Details' },
-    ],
-  },
 ]
 
 const pricingNavigation: NavItem[] = [
@@ -587,51 +577,61 @@ high-end commercial style, sharp focus"`}</CodeBlock>
 
             <SubSection id="aspect-ratio" title="Aspect Ratio">
               <p>
-                Choose from preset aspect ratios optimized for common use cases. The ratio picker appears next to the quality picker in the chat footer.
+                The Aspect Ratio Picker lets you specify the output dimensions for AI-generated images. Choose from common presets or enter exact custom dimensions via Custom Size.
               </p>
               <div className="mt-4 overflow-hidden rounded-xl border border-olive-200 dark:border-olive-700">
                 <table className="w-full text-sm">
                   <thead className="bg-olive-100 dark:bg-olive-800">
                     <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Preset</th>
                       <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Ratio</th>
-                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Name</th>
-                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Common Uses</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Best For</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-olive-200 bg-white dark:divide-olive-700 dark:bg-olive-900">
                     <tr>
                       <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Auto</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">AI Decides</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Let the AI choose the best ratio for your content</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">—</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Let the AI decide based on content</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">1:1</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Square</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram posts, profile pictures, app icons</td>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Square</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">1:1</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Profile pictures, Instagram posts</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">4:5</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Portrait</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram portrait, Pinterest pins</td>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Portrait</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">4:5</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram portrait posts</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">9:16</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Story</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram/TikTok stories, mobile wallpapers</td>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Story</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">9:16</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram/TikTok Stories, Reels</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">16:9</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Wide</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">YouTube thumbnails, presentations, desktop wallpapers</td>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Wide</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">16:9</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">YouTube thumbnails, presentations</td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">3:2</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Photo</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Traditional photo prints, camera aspect ratio</td>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Photo</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">3:2</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Standard photo prints</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">How to Use</h4>
+              <ol className="list-inside list-decimal space-y-2 pl-1">
+                <li><strong>Open the Picker</strong> — Click the ratio button (shows "Auto" by default) in the chat footer, next to the Quality picker.</li>
+                <li><strong>Select a Preset</strong> — Click any preset to select it. The picker closes and your selection is shown on the button.</li>
+                <li><strong>Or Use Custom Size</strong> — Select "Custom Size" at the bottom, then enter your exact width and height in pixels. Click Apply to confirm. Minimum size is 256×256.</li>
+                <li><strong>Generate</strong> — Add your instructions and click Make Image. The AI will generate images at your specified ratio.</li>
+              </ol>
+              <p className="mt-4">
+                When you select a preset ratio, the AI model (Gemini) generates images natively at that aspect ratio—no cropping or stretching occurs. This produces better results than generating at a default ratio and cropping afterward.
+              </p>
               <Callout type="tip">
                 <strong>Know your platform:</strong> Use Story (9:16) for TikTok/Reels, Wide (16:9) for YouTube thumbnails. When unsure, start with Auto and let the AI optimize for your content.
               </Callout>
@@ -1117,86 +1117,6 @@ Validation: color`}</CodeBlock>
             <Callout type="tip">
               <strong>Use cases:</strong> Great for quickly batch-resizing photos for social media dimensions. Use 9:16 ratio + 1K quality for Instagram Stories. Use 1:1 ratio for square profile pictures. Custom size (e.g., 1200×630) is perfect for Open Graph images.
             </Callout>
-          </Section>
-
-          {/* Aspect Ratio Presets */}
-          <Section id="aspect-ratio-presets" title="Aspect Ratio Presets">
-            <p>
-              The Aspect Ratio Picker lets you specify the output dimensions for AI-generated images. Choose from common presets or enter exact custom dimensions.
-            </p>
-
-            <SubSection id="available-presets" title="Available Presets">
-              <div className="overflow-hidden rounded-xl border border-olive-200 dark:border-olive-700">
-                <table className="w-full text-sm">
-                  <thead className="bg-olive-100 dark:bg-olive-800">
-                    <tr>
-                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Preset</th>
-                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Ratio</th>
-                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Best For</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-olive-200 bg-white dark:divide-olive-700 dark:bg-olive-900">
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Auto</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">—</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Let the AI decide based on content</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Square</td>
-                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">1:1</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Profile pictures, Instagram posts</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Portrait</td>
-                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">4:5</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram portrait posts</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Story</td>
-                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">9:16</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram/TikTok Stories, Reels</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Wide</td>
-                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">16:9</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">YouTube thumbnails, presentations</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Photo</td>
-                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">3:2</td>
-                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Standard photo prints</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">How to Use</h4>
-              <ol className="list-inside list-decimal space-y-2 pl-1">
-                <li><strong>Open the Picker</strong> — Click the ratio button (shows "Auto" by default) in the chat footer, next to the Quality picker.</li>
-                <li><strong>Select a Preset</strong> — Click any preset to select it. The picker closes and your selection is shown on the button.</li>
-                <li><strong>Or Use Custom Size</strong> — Select "Custom Size" at the bottom, then enter your exact width and height in pixels. Click Apply to confirm. Minimum size is 256×256.</li>
-                <li><strong>Generate</strong> — Add your instructions and click Make Image. The AI will generate images at your specified ratio.</li>
-              </ol>
-              <p className="mt-4">
-                When you select a preset ratio, the AI model (Gemini) generates images natively at that aspect ratio—no cropping or stretching occurs. This produces better results than generating at a default ratio and cropping afterward.
-              </p>
-            </SubSection>
-
-            <SubSection id="custom-size-details" title="Custom Size Details">
-              <p>
-                When you enter custom dimensions, the system handles everything automatically:
-              </p>
-              <ol className="list-inside list-decimal space-y-2 pl-1">
-                <li>The system calculates the closest matching ratio for the AI</li>
-                <li>The optimal quality tier is auto-selected based on your dimensions</li>
-                <li>After generation, the image is precisely resized to your exact pixel dimensions</li>
-              </ol>
-              <p className="mt-4">
-                This ensures pixel-perfect output for specific use cases like banners, thumbnails, and platform-specific images.
-              </p>
-              <Callout type="tip">
-                <strong>Examples:</strong> Use 1080×1080 for Instagram posts, 1920×1080 for YouTube thumbnails, or 1080×1920 for Instagram Stories. Enter your exact dimensions and Peel handles the rest.
-              </Callout>
-            </SubSection>
           </Section>
 
           {/* Pricing Section Divider */}
