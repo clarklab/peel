@@ -111,7 +111,7 @@ function NavLink({
 
 function Sidebar({ activeSection }: { activeSection: string }) {
   return (
-    <aside className="sticky top-24 hidden h-fit w-64 shrink-0 lg:block">
+    <aside className="sticky top-24 hidden max-h-[calc(100vh-8rem)] w-64 shrink-0 overflow-y-auto lg:block">
       <nav className="flex flex-col gap-1">
         <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-olive-400 dark:text-olive-500">
           Documentation
