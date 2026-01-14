@@ -12,6 +12,10 @@ import { BanknotesIcon } from '@/components/icons/banknotes-icon'
 import { TagIcon } from '@/components/icons/tag-icon'
 import { SparklesIcon } from '@/components/icons/sparkles-icon'
 import { BeakerIcon } from '@/components/icons/beaker-icon'
+import { CloudArrowDownIcon } from '@/components/icons/cloud-arrow-down-icon'
+import { ArchiveBoxIcon } from '@/components/icons/archive-box-icon'
+import { ArrowDownArrowUpIcon } from '@/components/icons/arrow-down-arrow-up-icon'
+import { Squares2StackedIcon } from '@/components/icons/squares-2-stacked-icon'
 
 type NavItem = {
   id: string
@@ -59,6 +63,18 @@ const navigation: NavItem[] = [
     ],
   },
   { id: 'reference-images', label: 'Reference Images', icon: <SparklesIcon className="size-4" /> },
+  { id: 'download-modal', label: 'Download Modal', icon: <CloudArrowDownIcon className="size-4" /> },
+  { id: 'large-file-handling', label: 'Large File Handling', icon: <ArchiveBoxIcon className="size-4" /> },
+  { id: 'free-local-resize', label: 'Free Local Resize', icon: <ArrowDownArrowUpIcon className="size-4" /> },
+  {
+    id: 'aspect-ratio-presets',
+    label: 'Aspect Ratio Presets',
+    icon: <Squares2StackedIcon className="size-4" />,
+    children: [
+      { id: 'available-presets', label: 'Available Presets' },
+      { id: 'custom-size-details', label: 'Custom Size Details' },
+    ],
+  },
 ]
 
 const pricingNavigation: NavItem[] = [
@@ -1003,6 +1019,184 @@ Validation: color`}</CodeBlock>
             <p>
               To get the most out of reference images, choose clear, high-quality examples that strongly represent your desired outcome. Multiple references work best when they're consistent with each other—conflicting visual styles can confuse the AI. For brand work, include your most definitive style examples. For technical transformations, include before/after pairs showing exactly what change you want.
             </p>
+          </Section>
+
+          {/* Download Modal */}
+          <Section id="download-modal" title="Download Modal">
+            <p>
+              The Download Modal lets you export your processed images with full control over format, filenames, and which images to include. Access it by clicking Download All in the Results header after processing images.
+            </p>
+            {/* TODO: Add screenshot placeholder */}
+            <div className="mt-6 flex aspect-video items-center justify-center rounded-xl border-2 border-dashed border-olive-300 bg-olive-100 dark:border-olive-700 dark:bg-olive-900">
+              <span className="text-sm text-olive-500 dark:text-olive-400">[Screenshot: Download Modal interface]</span>
+            </div>
+            <h4 className="pt-8 font-display text-lg font-semibold text-olive-950 dark:text-white">How to Use</h4>
+            <ol className="list-inside list-decimal space-y-3 pl-1">
+              <li><strong>Open the Modal</strong> — After processing images, click the Download All button in the Results panel header. The modal appears with all your completed images listed.</li>
+              <li><strong>Choose a Format</strong> — At the top of the modal, select your export format:
+                <ul className="ml-6 mt-2 list-inside list-disc space-y-1">
+                  <li><strong>WEBP</strong> — Smallest file size, great for web use</li>
+                  <li><strong>PNG</strong> — Lossless quality, supports transparency</li>
+                  <li><strong>JPG</strong> — Universal compatibility, good compression</li>
+                </ul>
+              </li>
+              <li><strong>Select Images</strong> — Each image has a checkbox. Click to toggle individual images on/off, or use Select All / Deselect All at the top to quickly select or clear all images.</li>
+              <li><strong>Edit Filenames</strong> — Click on any filename to edit it inline. The extension is added automatically based on your chosen format.</li>
+              <li><strong>Review Sizes</strong> — Each image shows an estimated file size based on your selected format. The footer displays the total estimated ZIP size.</li>
+              <li><strong>Download</strong> — Click Download ZIP to convert all selected images and download them as a single ZIP file. A progress indicator shows conversion status.</li>
+            </ol>
+            <Callout type="tip">
+              <strong>Format tips:</strong> WEBP typically produces files 30% smaller than PNG. JPG is best for photographs; PNG is better for graphics with sharp edges or transparency. Filenames are preserved from your original uploads or any names you set during compression.
+            </Callout>
+          </Section>
+
+          {/* Large File Handling */}
+          <Section id="large-file-handling" title="Large File Handling">
+            <p>
+              Peel has a 4MB file size limit to ensure fast, reliable processing. When you upload images larger than 4MB, a modal appears with options to compress, rename, or skip those files.
+            </p>
+            {/* TODO: Add screenshot placeholder */}
+            <div className="mt-6 flex aspect-video items-center justify-center rounded-xl border-2 border-dashed border-olive-300 bg-olive-100 dark:border-olive-700 dark:bg-olive-900">
+              <span className="text-sm text-olive-500 dark:text-olive-400">[Screenshot: Large File Handling modal]</span>
+            </div>
+            <h4 className="pt-8 font-display text-lg font-semibold text-olive-950 dark:text-white">How It Works</h4>
+            <ol className="list-inside list-decimal space-y-3 pl-1">
+              <li><strong>Automatic Detection</strong> — When you drag and drop or select files, any image over 4MB triggers the File Size Limit modal.</li>
+              <li><strong>Review Oversized Files</strong> — The modal lists each oversized file with its current size and a preview thumbnail.</li>
+              <li><strong>Choose an Action</strong> for each file:
+                <ul className="ml-6 mt-2 list-inside list-disc space-y-1">
+                  <li><strong>Compress</strong> — Automatically reduce the file size while preserving as much quality as possible. The compressed size is shown as an estimate.</li>
+                  <li><strong>Skip</strong> — Exclude this file from your batch and continue with the rest.</li>
+                </ul>
+              </li>
+              <li><strong>Rename Files (Optional)</strong> — Click the filename to edit it. This display name carries through to your results and downloads, making it easy to identify images later.</li>
+              <li><strong>Confirm</strong> — Click Continue to apply your choices. Compressed files are added to your batch; skipped files are ignored.</li>
+            </ol>
+            <h4 className="pt-8 font-display text-lg font-semibold text-olive-950 dark:text-white">Compression Details</h4>
+            <ul className="list-inside list-disc space-y-2 pl-1">
+              <li>Compression targets just under 4MB to fit within limits</li>
+              <li>Quality is preserved as much as possible—the system uses iterative compression to find the best balance</li>
+              <li>Original files on your computer are never modified</li>
+            </ul>
+            <Callout type="tip">
+              <strong>Tips:</strong> If you're uploading high-resolution photos from a camera, expect most to need compression. Renaming during compression is a great way to organize batch jobs (e.g., "hero-image", "product-shot-1"). You can still skip files after seeing the compressed preview if the quality isn't acceptable.
+            </Callout>
+          </Section>
+
+          {/* Free Local Resize */}
+          <Section id="free-local-resize" title="Free Local Resize">
+            <p>
+              When you only need to resize or crop images without AI editing, Peel can process them instantly in your browser—completely free, with no tokens used.
+            </p>
+            <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">How It Works</h4>
+            <ol className="list-inside list-decimal space-y-2 pl-1">
+              <li><strong>Upload Images</strong> — Drag and drop your images as usual.</li>
+              <li><strong>Set Output Options</strong> — Use the Quality Picker (1K/2K/4K) and/or Aspect Ratio Picker to specify your desired output. You can also use Custom Size for exact pixel dimensions.</li>
+              <li><strong>Leave Instructions Empty</strong> — Don't add any text instructions or select any presets. The key is: output settings only, no AI instructions.</li>
+              <li><strong>Click Resize</strong> — When resize-only mode is detected, the button changes from "Make Image" to Resize. Click it to process.</li>
+              <li><strong>Instant Results</strong> — Images are resized locally in your browser and appear immediately in Results. The cost shows as FREE with "Local resize" noted.</li>
+            </ol>
+            <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">When Does Free Resize Activate?</h4>
+            <p>
+              Free resize activates when ALL of these conditions are true:
+            </p>
+            <ul className="list-inside list-disc space-y-2 pl-1">
+              <li>You have image(s) uploaded (not text prompts)</li>
+              <li>You've changed at least one output setting (quality, ratio, or custom size)</li>
+              <li>You have NO text instructions entered</li>
+              <li>You have NO preset selected</li>
+            </ul>
+            <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">What Happens During Local Resize</h4>
+            <ul className="list-inside list-disc space-y-2 pl-1">
+              <li>Images are scaled to your specified quality tier (1K = max 1024px, 2K = max 2048px, 4K = max 4096px)</li>
+              <li>If you selected an aspect ratio, images are center-cropped to match</li>
+              <li>If you specified custom dimensions, images are cropped and scaled to exact pixels</li>
+              <li>Original format is preserved (JPEG stays JPEG, PNG stays PNG)</li>
+              <li>Maximum quality (1.0) is used—no additional compression</li>
+            </ul>
+            <Callout type="tip">
+              <strong>Use cases:</strong> Great for quickly batch-resizing photos for social media dimensions. Use 9:16 ratio + 1K quality for Instagram Stories. Use 1:1 ratio for square profile pictures. Custom size (e.g., 1200×630) is perfect for Open Graph images.
+            </Callout>
+          </Section>
+
+          {/* Aspect Ratio Presets */}
+          <Section id="aspect-ratio-presets" title="Aspect Ratio Presets">
+            <p>
+              The Aspect Ratio Picker lets you specify the output dimensions for AI-generated images. Choose from common presets or enter exact custom dimensions.
+            </p>
+
+            <SubSection id="available-presets" title="Available Presets">
+              <div className="overflow-hidden rounded-xl border border-olive-200 dark:border-olive-700">
+                <table className="w-full text-sm">
+                  <thead className="bg-olive-100 dark:bg-olive-800">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Preset</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Ratio</th>
+                      <th className="px-4 py-3 text-left font-semibold text-olive-950 dark:text-white">Best For</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-olive-200 bg-white dark:divide-olive-700 dark:bg-olive-900">
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Auto</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">—</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Let the AI decide based on content</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Square</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">1:1</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Profile pictures, Instagram posts</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Portrait</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">4:5</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram portrait posts</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Story</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">9:16</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Instagram/TikTok Stories, Reels</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Wide</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">16:9</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">YouTube thumbnails, presentations</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium text-olive-950 dark:text-white">Photo</td>
+                      <td className="px-4 py-3 font-mono text-olive-600 dark:text-olive-400">3:2</td>
+                      <td className="px-4 py-3 text-olive-600 dark:text-olive-400">Standard photo prints</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">How to Use</h4>
+              <ol className="list-inside list-decimal space-y-2 pl-1">
+                <li><strong>Open the Picker</strong> — Click the ratio button (shows "Auto" by default) in the chat footer, next to the Quality picker.</li>
+                <li><strong>Select a Preset</strong> — Click any preset to select it. The picker closes and your selection is shown on the button.</li>
+                <li><strong>Or Use Custom Size</strong> — Select "Custom Size" at the bottom, then enter your exact width and height in pixels. Click Apply to confirm. Minimum size is 256×256.</li>
+                <li><strong>Generate</strong> — Add your instructions and click Make Image. The AI will generate images at your specified ratio.</li>
+              </ol>
+              <p className="mt-4">
+                When you select a preset ratio, the AI model (Gemini) generates images natively at that aspect ratio—no cropping or stretching occurs. This produces better results than generating at a default ratio and cropping afterward.
+              </p>
+            </SubSection>
+
+            <SubSection id="custom-size-details" title="Custom Size Details">
+              <p>
+                When you enter custom dimensions, the system handles everything automatically:
+              </p>
+              <ol className="list-inside list-decimal space-y-2 pl-1">
+                <li>The system calculates the closest matching ratio for the AI</li>
+                <li>The optimal quality tier is auto-selected based on your dimensions</li>
+                <li>After generation, the image is precisely resized to your exact pixel dimensions</li>
+              </ol>
+              <p className="mt-4">
+                This ensures pixel-perfect output for specific use cases like banners, thumbnails, and platform-specific images.
+              </p>
+              <Callout type="tip">
+                <strong>Examples:</strong> Use 1080×1080 for Instagram posts, 1920×1080 for YouTube thumbnails, or 1080×1920 for Instagram Stories. Enter your exact dimensions and Peel handles the rest.
+              </Callout>
+            </SubSection>
           </Section>
 
           {/* Pricing Section Divider */}
