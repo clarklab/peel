@@ -4,6 +4,19 @@ export default function Page() {
   return (
     <>
       <DocumentCentered id="changelog" headline="Changelog" subheadline={<p>Recent updates and improvements to Peel.</p>}>
+        <h2>January 21, 2026</h2>
+        <h3>⚡ Performance & Reliability</h3>
+        <ul>
+          <li><strong>Bulletproof Batch Processing</strong> — Switched to Netlify Edge Functions (Deno) which have no timeout waiting for AI responses. Large batches no longer fail at ~30 seconds.</li>
+          <li><strong>8x Parallel Jobs</strong> — Increased concurrent processing from 2 to 8 jobs with 100ms stagger delay (was 1-2s). Batches complete significantly faster.</li>
+        </ul>
+
+        <h3>✨ Features & Fixes</h3>
+        <ul>
+          <li><strong>Duplicate Prompt Button</strong> — Added "Duplicate" action to text input cards with drop-in animation.</li>
+          <li><strong>UI Fixes</strong> — Fixed "Send as Chat" label overlap, removed icon from "Cancel Job" link.</li>
+        </ul>
+
         <h2>January 13, 2026</h2>
         <h3>📁 Image File Tuning</h3>
         <ul>

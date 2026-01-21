@@ -526,6 +526,16 @@ high-end commercial style, sharp focus"`}</CodeBlock>
               <Callout type="tip">
                 <strong>Pro tip:</strong> Save your best prompts! When you find a prompt structure that works well for your needs, you can create a custom preset to reuse it across future sessions. This is especially valuable for maintaining brand consistency.
               </Callout>
+              <h4 className="pt-4 font-display text-lg font-semibold text-olive-950 dark:text-white">Duplicating Prompts</h4>
+              <p>
+                Each text prompt card in the Input Panel includes a Duplicate button. Tap it to instantly create a copy of that prompt, which appears below with a subtle drop-in animation. This is useful when you want to:
+              </p>
+              <ul className="list-inside list-disc space-y-2 pl-1">
+                <li>Generate multiple variations of the same concept with small tweaks</li>
+                <li>Test different wording without retyping your entire prompt</li>
+                <li>Run the same prompt across different output settings</li>
+                <li>A/B test slightly different instructions to see what works best</li>
+              </ul>
             </SubSection>
           </Section>
 
